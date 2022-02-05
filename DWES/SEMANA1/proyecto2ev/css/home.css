@@ -1,0 +1,330 @@
+* {
+    box-sizing: border-box
+}
+
+body .navbar {
+    padding: 0;
+}
+
+#titulo {
+    font-family: 'Kaushan Script', cursive;
+    display: flex;
+    justify-content: center;
+}
+
+#menu {
+    background-color: #141414;
+    justify-content: flex-start;
+}
+
+#logo {
+    width: 5%;
+    margin-left: 200px;
+    margin-right: 435px;
+}
+
+#slider {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Slider*/
+#slider1 {
+    width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+#slider2 {
+    width: 1000px;
+    position: relative;
+    margin: auto;
+}
+
+/* Imagenes del slider */
+.pincho {
+    width: 100%;
+    display: none;
+    background-size: cover;
+    background-position: center;
+}
+
+.pincho2 {
+    width: 100%;
+    display: none;
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Botones anterior y siguiente */
+.anterior, .siguiente {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Boton siguiente */
+.siguiente {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.anterior:hover, .siguiente:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Numero del pincho*/
+.numTexto {
+    color: #f2f2f2;
+    font-size: 12px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+#slide1 {
+    background-image: url("../img/pincho1.jpg");
+    width: 100%;
+    height: 60vh;
+}
+
+#slide2 {
+    background-image: url("../img/pincho2.jpg");
+    width: 100%;
+    height: 60vh;
+}
+
+#slide3 {
+    background-image: url("../img/pincho3.jpg");
+    width: 100%;
+    height: 60vh;
+}
+
+#slide4 {
+    background-image: url("../img/pincho4.jpg");
+    width: 100%;
+    height: 60vh;
+}
+
+#slide5 {
+    background-image: url("../img/pincho5.jpg");
+    width: 100%;
+    height: 60vh;
+}
+
+/* puntos*/
+.punto {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .punto:hover {
+    background-color: #717171;
+}
+
+
+/*  Animaciones*/
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 5s;
+}
+
+i {
+    position: relative;
+    display: block;
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 5px;
+}
+
+i:before, i:after {
+    content: '⥪';
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    z-index: 2;
+    width: 2rem;
+    height: 2rem;
+    background: dodgerblue;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+i:after {
+    content: '⥭';
+    left: auto;
+    right: 1rem;
+}
+
+/* I haven't found a way for IE and Edge to let me style inputs that way */
+input {
+    appearance: none;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    transform: translateX(100%);
+    transition: transform ease-in-out 400ms;
+    z-index: 1;
+}
+
+input:focus {
+    outline: none;
+}
+
+input:after {
+    content: attr(title);
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: white;
+    padding: .5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+input:not(checked):before {
+    content: '';
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    top: 50%;
+    left: calc(-100% + 1rem);
+}
+
+input:checked:before {
+    display: none;
+    left: 1rem;
+}
+
+input:checked {
+    transform: translateX(0);
+    pointer-event: none;
+    z-index: 0;
+    box-shadow: -5px 10px 20px -15px rgba(0, 0, 0, 1);
+}
+
+input:checked+input:before {
+    left: -3rem;
+}
+
+input:checked+input~input:before {
+    display: none;
+}
+
+.navbar .container-fluid {
+    justify-content: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+.navbar {
+    flex-wrap: nowrap;
+}
+
+section {
+    margin-bottom: 40px;
+}
+
+footer {
+    width: 100%;
+    align-items: center;
+    box-sizing: border-box;
+    margin-top: 20px;
+}
+
+#enviar {
+    margin-top: 20px;
+}
+
+
+
+
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+.fade2 {
+    -webkit-animation-name: fade2;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade2;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade2 {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade2 {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
