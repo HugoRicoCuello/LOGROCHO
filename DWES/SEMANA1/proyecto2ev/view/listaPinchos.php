@@ -35,7 +35,7 @@
                 <h2 class="modal-title">NUEVO PINCHO</h2>
             </div>
             <div class="modal-body">
-                <form action="altaPincho.php">
+                <form action="<?php echo $rutaVista ?>index.php/altaPincho" method="POST" enctype="multipart/form-data">
                     <div class="mb-3 mt-3">
                         <label for="nombre" class="form-label">Nombre</label>
                         <input type="text" class="form-control" id="nombre" placeholder="Introduce el nombre" name="nombre">
@@ -55,7 +55,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="formFileMultiple" class="form-label">Seleccionar Archivos</label>
-                        <input class="form-control" type="file" id="formFileMultiple" multiple>
+                        <input type="file" class="form-control-file" id="file" name="file[]" multiple>
                     </div>
                     <button type="submit" class="btn btn-success">Aceptar</button>
                     <a type="submit" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</a>

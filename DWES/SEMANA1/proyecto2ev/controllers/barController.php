@@ -14,6 +14,7 @@ class barController
     function altaBar($nombre, $latitud, $longitud)
     {
         $this->bd->altaBar($nombre, $latitud, $longitud);
+        
         header("Location:" . $this->ruta_global . "index.php/administracion");
     }
 

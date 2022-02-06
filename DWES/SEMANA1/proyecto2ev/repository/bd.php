@@ -374,7 +374,41 @@ class BD
             echo $e->getMessage();
         }
     }
+
     
+    /**
+     * guardaImagenesPinchos
+     *
+     * @param  mixed $idPincho
+     * @param  mixed $fotos
+     * @return void
+     */
+    function guardaImagenesPinchos($idPincho, $fotos)
+    {
+        try {
+            $this->db->beginTransaction();
+            $ruta = "img_pinchos/" . $idPincho . "/";
+
+            for ($i = 0; $i < count($fotos); $i++) {
+                if ($fotos[$i] != "" && $fotos[$i] != null) {
+                    $rutaCompleta = $ruta . "" . $fotos[$i];
+                    $sql = "INSERT INTO imagenes_pinchos (imagen, pincho) VALUES ('$rutaCompleta', '$idPincho')";
+                    $resultado = $this->db->query($sql);
+                    if (!$resultado) {
+                        $this->db->rollBack();
+                        return false;
+                    }
+                }
+            }
+
+            $this->db->commit();
+            return true;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+
     /**
      * obtieneNombreBar
      *
@@ -393,7 +427,7 @@ class BD
             echo $e->getMessage();
         }
     }
-    
+
     /**
      * obtieneIdBar
      *
@@ -425,7 +459,7 @@ class BD
             $sql = "SELECT id FROM pinchos where nombre=" . "'$nombre'";
             $resultado = $this->db->query($sql);
             foreach ($resultado as $id) {
-                return $id;
+                return $id[0];
             }
         } catch (PDOException $e) {
             echo $e->getMessage();

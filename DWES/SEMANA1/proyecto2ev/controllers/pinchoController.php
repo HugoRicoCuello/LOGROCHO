@@ -12,10 +12,26 @@ class pinchoController
     }
 
 
-    function altaPincho($nombre, $bar)
+    function altaPincho($nombre, $bar, $imagenes)
     {
         $this->bd->altaPincho($nombre, $bar);
-        header("Location:" . $this->ruta_global . "index.php/pruebas");
+        $idPincho = $this->bd->obtieneIdPincho($nombre);
+        $nImagenes = count($imagenes);
+        $fotos = array();
+        $rutaImagenes = file_get_contents("config.txt");
+        $rutaPincho = $rutaImagenes . "\\img_pinchos\\" . $idPincho;
+
+        for ($i = 0; $i < $nImagenes; $i++) {
+            $filename = $imagenes[$i];
+            array_push($fotos, $filename);
+            if (!file_exists($rutaPincho . $filename)) {
+                mkdir($rutaPincho, 0777, true);
+            }
+            move_uploaded_file($_FILES['file']['tmp_name'][$i], $rutaPincho . "\\" . $filename);
+        }
+
+        $this->bd->guardaImagenesPinchos($idPincho, $fotos);
+        header("Location:" . $this->ruta_global . "index.php/administracion");
     }
 
     function bajaPincho($id)
@@ -35,7 +51,8 @@ class pinchoController
         require("view/listaPinchos.php");
     }
 
-    function listaPincho(){
+    function listaPincho()
+    {
         require("view/listaPincho.php");
     }
 

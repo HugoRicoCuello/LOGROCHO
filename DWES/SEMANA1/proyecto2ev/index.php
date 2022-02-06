@@ -50,7 +50,7 @@ switch ($accion) {
     case 'administracion':
         $loginController->muestraAdministracion();
         break;
-    case 'home':
+        /* case 'home':
         $frontController->muestraHome();
         break;
     case 'bares':
@@ -58,7 +58,7 @@ switch ($accion) {
         break;
     case 'pinchos':
         $frontController->muestraPinchos();
-        break;
+        break;*/
     case 'altaBar':
         $nombre = $_POST["nombre"];
         $lat = $_POST["latitud"];
@@ -71,25 +71,22 @@ switch ($accion) {
     case 'modificaBar':
         $barController->modificaBar(9, "casa alvaro", 1.3, 10, 10);
         break;
-    case 'listaBares':
-        $barController->listaBares();
-        break;
     case 'obtieneBares':
         $limite = $array_ruta[1];
         $numero = $array_ruta[2];
         $barController->obtieneBares($limite, $numero);
         break;
     case 'altaPincho':
-        $pinchoController->altaPincho("pincho tortilla", 10);
+        $nombre = $_POST["nombre"];
+        $bar = $_POST["bar"];
+        $imagenes = $_FILES["file"]["name"];
+        $pinchoController->altaPincho($nombre, $bar, $imagenes);
         break;
     case 'bajaPincho':
         $pinchoController->bajaPincho(1);
         break;
     case 'modificaPincho':
         $pinchoController->modificaPincho(1, "pincho tortilla", 5);
-        break;
-    case 'listaPinchos':
-        $pinchoController->listaPinchos();
         break;
     case 'obtienePinchos':
         $limite = $array_ruta[1];
@@ -107,9 +104,6 @@ switch ($accion) {
     case 'modificaUsuario':
         $userController->modificaUsuario(3, "email2@email.com", "Admin12345", "true");
         break;
-    case 'listaUsuarios':
-        $userController->listaUsuarios();
-        break;
     case 'obtieneUsuarios':
         $limite = $array_ruta[1];
         $numero = $array_ruta[2];
@@ -125,12 +119,16 @@ switch ($accion) {
     case 'bajaResegna':
         $resegnaController->bajaResegna(13);
         break;
-    case 'modificaResegna':
-        $resegnaController->modificaResegna(12, 4.8, "He cambiado el texto", 1, 7);
+    case 'fichaResegna':
+        $puntuacion = $_GET["puntuacion"];
+        $descripcion = $_GET["descripcion"];
+        $usuario = $_GET["usuario"];
+        $pincho = $_GET["pincho"];
+        $resegnaController->verFichaResegna($puntuacion, $descripcion, $usuario, $pincho);
         break;
-    case 'listaResegnas':
-        $resegnaController->listaResegnas();
-        break;
+        /*case 'modificaResegna':
+        $resegnaController->verFichaResegna();
+        break;*/
     case 'obtieneResegnas':
         $limite = $array_ruta[1];
         $numero = $array_ruta[2];

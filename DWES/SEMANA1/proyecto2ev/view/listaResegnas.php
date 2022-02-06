@@ -67,7 +67,7 @@
                             $pinchos = $bd->obtieneTodosPinchos();
                             foreach ($pinchos as $pincho) {
                                 $nombre = $bd->obtieneNombrePincho($pincho[0]);
-                                $id = $bd->obtieneIdPincho($nombre[0]); 
+                                $id = $bd->obtieneIdPincho($nombre[0]);
                                 echo '<option value="' . $id[0] . '">' . $nombre[0] . '</option>';
                             }
                             ?>
@@ -99,7 +99,7 @@
             success: function(response) {
                 tabla.html("");
                 for (let i = 0; i < response.length; i++) {
-                    tabla.append("<tr><td onclick=''>" + response[i].id + "</td><td onclick=''>" + response[i].puntuacion + "</td><td onclick=''>" + response[i].descripcion + "</td><td onclick=''>" + response[i].usuario + "</td><td onclick=''>" + response[i].pincho + "</td></tr>");
+                    tabla.append("<tr onclick='verFicha(this)'><td class='id'>" + response[i].id + "</td><td class='puntuacion'>" + response[i].puntuacion + "</td><td class='descripcion'>" + response[i].descripcion + "</td><td class='usuario'>" + response[i].usuario + "</td><td class='pincho'>" + response[i].pincho + "</td></tr>");
                 }
             }
         });
@@ -118,7 +118,7 @@
             success: function(response) {
                 tabla.html("");
                 for (let i = 0; i < response.length; i++) {
-                    tabla.append("<tr><td onclick=''>" + response[i].id + "</td><td onclick=''>" + response[i].puntuacion + "</td><td onclick=''>" + response[i].descripcion + "</td><td onclick=''>" + response[i].usuario + "</td><td onclick=''>" + response[i].pincho + "</td></tr>");
+                    tabla.append("<tr onclick='verFicha(this)'><td class='id'>" + response[i].id + "</td><td class='puntuacion'>" + response[i].puntuacion + "</td><td class='descripcion'>" + response[i].descripcion + "</td><td class='usuario'>" + response[i].usuario + "</td><td class='pincho'>" + response[i].pincho + "</td></tr>");
                 }
             }
         });
@@ -136,12 +136,21 @@
                 if (response.length != 0) {
                     tabla.html("");
                     for (let i = 0; i < response.length; i++) {
-                        tabla.append("<tr><td onclick=''>" + response[i].id + "</td><td onclick=''>" + response[i].puntuacion + "</td><td onclick=''>" + response[i].descripcion + "</td><td onclick=''>" + response[i].usuario + "</td><td onclick=''>" + response[i].pincho + "</td></tr>");
+                        tabla.append("<tr onclick='verFicha(this)'><td class='id'>" + response[i].id + "</td><td class='puntuacion'>" + response[i].puntuacion + "</td><td class='descripcion'>" + response[i].descripcion + "</td><td class='usuario'>" + response[i].usuario + "</td><td class='pincho'>" + response[i].pincho + "</td></tr>");
                     }
                 } else {
                     pag -= valor;
                 }
             }
         });
+    }
+
+    function verFicha(tr) {
+        let puntuacion = tr.getElementsByClassName("puntuacion")[0].innerHTML;
+        let descripcion = tr.getElementsByClassName("descripcion")[0].innerHTML;
+        let usuario = tr.getElementsByClassName("usuario")[0].innerHTML;
+        let pincho = tr.getElementsByClassName("pincho")[0].innerHTML;
+
+        window.location = "http://localhost/DWES/SEMANA1/proyecto2ev/index.php/fichaResegna?puntuacion=" + puntuacion + "&descripcion=" + descripcion + "&usuario=" + usuario + "&pincho=" + pincho;
     }
 </script>
