@@ -50,7 +50,7 @@ switch ($accion) {
     case 'administracion':
         $loginController->muestraAdministracion();
         break;
-        /* case 'home':
+    case 'home':
         $frontController->muestraHome();
         break;
     case 'bares':
@@ -58,7 +58,7 @@ switch ($accion) {
         break;
     case 'pinchos':
         $frontController->muestraPinchos();
-        break;*/
+        break;
     case 'altaBar':
         $nombre = $_POST["nombre"];
         $lat = $_POST["latitud"];
@@ -117,14 +117,16 @@ switch ($accion) {
         $resegnaController->altaResegna($puntuacion, $descripcion, $usuario, $pincho);
         break;
     case 'bajaResegna':
-        $resegnaController->bajaResegna(13);
+        $id = $array_ruta[1];
+        $resegnaController->bajaResegna($id);
         break;
     case 'fichaResegna':
         $puntuacion = $_GET["puntuacion"];
         $descripcion = $_GET["descripcion"];
         $usuario = $_GET["usuario"];
         $pincho = $_GET["pincho"];
-        $resegnaController->verFichaResegna($puntuacion, $descripcion, $usuario, $pincho);
+        $id = $_GET["id"];
+        $resegnaController->verFichaResegna($puntuacion, $descripcion, $usuario, $pincho, $id);
         break;
         /*case 'modificaResegna':
         $resegnaController->verFichaResegna();

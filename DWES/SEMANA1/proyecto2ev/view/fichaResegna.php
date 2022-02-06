@@ -12,7 +12,12 @@
 </head>
 
 <body>
-    <form action="javascript:void(0)">
+    <h2 id="titulo_resegna">FICHA DE LA RESEÑA</h2>
+    <form action="javascript:void(0)" class="formulario" method="POST">
+        <div class="eliminar">
+            <a class="btn btn-danger" href="http://localhost/DWES/SEMANA1/proyecto2ev/index.php/bajaResegna/<?php echo $id ?>">ELIMINAR</a>
+            <input type="hidden" name="id_resegna" value="<?php echo $id ?>">
+        </div>
         <div class="form-group">
             <label for="puntuacion">Puntuacion</label>
             <input type="number" step="any" class="form-control" id="puntuacion" value="<?php echo $puntuacion ?>">
@@ -29,7 +34,9 @@
             <label for="pincho">Pincho</label>
             <input type="text" class="form-control" id="pincho" value="<?php echo $pincho ?>">
         </div>
-        <button type="submit" class="btn btn-success">Aceptar</button>
-        <a class="btn btn-danger">Cancelar</a>
+        <div class="botones">
+            <button type="submit" class="btn btn-success">Aceptar</button>
+            <a class="btn btn-danger" href="http://localhost/DWES/SEMANA1/proyecto2ev/index.php/administracion">Cancelar</a>
+        </div>
     </form>
 </body>

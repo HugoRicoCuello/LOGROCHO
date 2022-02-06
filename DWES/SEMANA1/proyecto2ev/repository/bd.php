@@ -91,7 +91,7 @@ class BD
     function bajaResegna($id)
     {
         try {
-            $sql = "DELETE FROM reseñas WHERE id=$id";
+            $sql = "DELETE FROM reseñas WHERE id=" . $id;
             $this->db->query($sql);
         } catch (PDOException $e) {
             echo $e->getMessage();
@@ -375,7 +375,7 @@ class BD
         }
     }
 
-    
+
     /**
      * guardaImagenesPinchos
      *

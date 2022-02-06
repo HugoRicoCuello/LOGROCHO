@@ -35,3 +35,27 @@ a:hover {
 .navbar {
     flex-wrap: nowrap;
 }
+
+.formulario {
+    width: 40%;
+    margin: 2% auto;
+}
+
+#titulo_resegna {
+    margin: 4% auto;
+    width: fit-content;
+}
+
+.botones {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2%;
+}
+
+.eliminar {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}

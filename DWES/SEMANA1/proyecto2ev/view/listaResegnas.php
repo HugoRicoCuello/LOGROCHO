@@ -150,7 +150,8 @@
         let descripcion = tr.getElementsByClassName("descripcion")[0].innerHTML;
         let usuario = tr.getElementsByClassName("usuario")[0].innerHTML;
         let pincho = tr.getElementsByClassName("pincho")[0].innerHTML;
+        let id = tr.getElementsByClassName("id")[0].innerHTML;
 
-        window.location = "http://localhost/DWES/SEMANA1/proyecto2ev/index.php/fichaResegna?puntuacion=" + puntuacion + "&descripcion=" + descripcion + "&usuario=" + usuario + "&pincho=" + pincho;
+        window.location = "http://localhost/DWES/SEMANA1/proyecto2ev/index.php/fichaResegna?puntuacion=" + puntuacion + "&descripcion=" + descripcion + "&usuario=" + usuario + "&pincho=" + pincho + "&id=" + id;
     }
 </script>

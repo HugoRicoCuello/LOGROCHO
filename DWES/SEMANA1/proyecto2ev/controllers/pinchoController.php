@@ -18,8 +18,7 @@ class pinchoController
         $idPincho = $this->bd->obtieneIdPincho($nombre);
         $nImagenes = count($imagenes);
         $fotos = array();
-        $rutaImagenes = file_get_contents("config.txt");
-        $rutaPincho = $rutaImagenes . "\\img_pinchos\\" . $idPincho;
+        $rutaPincho = "./img_pinchos/" . $idPincho;
 
         for ($i = 0; $i < $nImagenes; $i++) {
             $filename = $imagenes[$i];

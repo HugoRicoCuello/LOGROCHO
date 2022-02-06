@@ -24,12 +24,13 @@ class resegnaController
         header("Location:" . $this->ruta_global . "index.php/administracion");
     }
 
-    function verFichaResegna($puntuacion, $descripcion, $usuario, $pincho)
+    function verFichaResegna($puntuacion, $descripcion, $usuario, $pincho, $id)
     {
         $puntuacion;
         $descripcion;
         $usuario;
         $pincho;
+        $id;
         require("view/fichaResegna.php");
     }
 
