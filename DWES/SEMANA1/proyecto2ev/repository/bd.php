@@ -1,6 +1,11 @@
 <?php
+/** 
+ * @author Hugo
+*/
 class BD
 {
+
+    
     private $db;
     public function __construct()
     {
@@ -9,7 +14,7 @@ class BD
 
     /**
      * getConexion
-     *
+     * Obtiene la conexión
      * @return void
      */
     function getConexion()
@@ -19,7 +24,7 @@ class BD
 
     /**
      * compruebaLogin
-     *
+     * Compreuba que el login es correcto
      * @param  mixed $user
      * @param  mixed $password
      * @return void
@@ -42,7 +47,7 @@ class BD
 
     /**
      * altaBar
-     *
+     * Da de alta el bar en la base de datos
      * @param  mixed $nombre
      * @param  mixed $puntuacion
      * @param  mixed $latitud
@@ -61,7 +66,7 @@ class BD
 
     /**
      * altaResegna
-     *
+     * Da de alta la reseña en la base de datos
      * @param  mixed $puntuacion
      * @param  mixed $descripcion
      * @param  mixed $usuario
@@ -80,7 +85,7 @@ class BD
 
     /**
      * bajaResegna
-     *
+     * Da de baja la reseña en la base de datos
      * @param  mixed $id
      * @return void
      */
@@ -96,7 +101,7 @@ class BD
 
     /**
      * modificaResegna
-     *
+     * Modifica la reseña en la base de datos
      * @param  mixed $id
      * @param  mixed $puntuacion
      * @param  mixed $descripcion
@@ -116,7 +121,7 @@ class BD
 
     /**
      * bajaBar
-     *
+     * Da de baja el bar en la base de datos
      * @param  mixed $id
      * @return void
      */
@@ -132,7 +137,7 @@ class BD
 
     /**
      * modificaBar
-     *
+     * Modifica el bar en la base de datos
      * @param  mixed $id
      * @param  mixed $nombre
      * @param  mixed $puntuacion
@@ -152,7 +157,7 @@ class BD
 
     /**
      * obtieneResegnas
-     *
+     * Obtiene las reseñas de la base de datos
      * @param  mixed $limite
      * @param  mixed $numero
      * @return void
@@ -174,7 +179,7 @@ class BD
 
     /**
      * obtieneResegna
-     *
+     * Obtiene todas las reseñas
      * @param  mixed $id
      * @return void
      */
@@ -195,7 +200,7 @@ class BD
 
     /**
      * altaPincho
-     *
+     * Da de alta el pincho en la base de datos
      * @param  mixed $nombre
      * @param  mixed $bar
      * @return void
@@ -212,7 +217,7 @@ class BD
 
     /**
      * bajaPincho
-     *
+     * Da de baja los pinchos en la base de datos
      * @param  mixed $id
      * @return void
      */
@@ -228,7 +233,7 @@ class BD
 
     /**
      * modificaPincho
-     *
+     * Modifica los pinchos en la base de datos
      * @param  mixed $id
      * @param  mixed $nombre
      * @param  mixed $bar
@@ -425,7 +430,13 @@ class BD
         }
     }
 
-    
+        
+    /**
+     * obtieneImagenesBares
+     *
+     * @param  mixed $idBar
+     * @return void
+     */
     function obtieneImagenesBares($idBar)
     {
         try {
