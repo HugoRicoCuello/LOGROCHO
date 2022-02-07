@@ -66,3 +66,15 @@ a:hover {
 img{
     height: 150px;
 }
+
+#cerrar_sesion{
+    margin-left: 30%;
+}
+
+#select{
+    border-radius: 5px;
+}
+
+h2{
+    margin: 0;
+}

@@ -56,7 +56,7 @@
                         <input type="file" class="form-control-file" id="file" name="file[]" multiple>
                     </div>
                     <button type="submit" class="btn btn-success">Aceptar</button>
-                    <a type="submit" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</a>
+                    <a class="btn btn-danger" data-bs-dismiss="modal">Cancelar</a>
                 </form>
             </div>
         </div>

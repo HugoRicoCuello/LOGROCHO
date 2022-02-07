@@ -47,141 +47,244 @@ switch ($accion) {
         $pass = $_POST["pass"];
         $loginController->compruebaLogin($email, $pass);
         break;
+    case 'cerrarSesion':
+        $loginController->cerrarSesion();
+        break;
     case 'administracion':
-        $loginController->muestraAdministracion();
+        if (isset($_SESSION["user"])) {
+            $loginController->muestraAdministracion();
+        } else {
+            $loginController->muestraLogin();
+        }
         break;
     case 'home':
-        $frontController->muestraHome();
+        if (isset($_SESSION["user"])) {
+            $frontController->muestraHome();
+        } else {
+            $loginController->muestraLogin();
+        }
         break;
     case 'bares':
-        $frontController->muestraBares();
+        if (isset($_SESSION["user"])) {
+            $frontController->muestraBares();
+        } else {
+            $loginController->muestraLogin();
+        }
         break;
     case 'pinchos':
-        $frontController->muestraPinchos();
+        if (isset($_SESSION["user"])) {
+            $frontController->muestraPinchos();
+        } else {
+            $loginController->muestraLogin();
+        }
         break;
     case 'altaBar':
-        $nombre = $_POST["nombre"];
-        $lat = $_POST["latitud"];
-        $long = $_POST["longitud"];
-        $imagenes = $_FILES["file"]["name"];
-        $barController->altaBar($nombre, $lat, $long, $imagenes);
+        if (isset($_SESSION["user"])) {
+            $nombre = $_POST["nombre"];
+            $lat = $_POST["latitud"];
+            $long = $_POST["longitud"];
+            $imagenes = $_FILES["file"]["name"];
+            $barController->altaBar($nombre, $lat, $long, $imagenes);
+        } else {
+            $loginController->muestraLogin();
+        }
         break;
     case 'bajaBar':
-        $id = $array_ruta[1];
-        $barController->bajaBar($id);
+        if (isset($_SESSION["user"])) {
+            $id = $array_ruta[1];
+            $barController->bajaBar($id);
+        } else {
+            $loginController->muestraLogin();
+        }
         break;
     case 'modificaBar':
-        $id = $_GET["id_bar"];
-        $nombre = $_GET["nombre"];
-        $lat = $_GET["lat"];
-        $lon = $_GET["lon"];
-        $puntuacion = $_GET["puntuacion"];
-        $barController->modificaBar($id, $nombre, $puntuacion, $lat, $lon);
+        if (isset($_SESSION["user"])) {
+            $id = $_GET["id_bar"];
+            $nombre = $_GET["nombre"];
+            $lat = $_GET["lat"];
+            $lon = $_GET["lon"];
+            $puntuacion = $_GET["puntuacion"];
+            $barController->modificaBar($id, $nombre, $puntuacion, $lat, $lon);
+        } else {
+            $loginController->muestraLogin();
+        }
         break;
     case 'fichaBar':
-        $nombre = $_GET["nombre"];
-        $lat = $_GET["lat"];
-        $lon = $_GET["lon"];
-        $puntuacion = $_GET["puntuacion"];
-        $id = $_GET["id"];
-        $barController->verFichaBar($nombre, $puntuacion, $lat, $lon, $id);
+        if (isset($_SESSION["user"])) {
+            $nombre = $_GET["nombre"];
+            $lat = $_GET["lat"];
+            $lon = $_GET["lon"];
+            $puntuacion = $_GET["puntuacion"];
+            $id = $_GET["id"];
+            $barController->verFichaBar($nombre, $puntuacion, $lat, $lon, $id);
+        } else {
+            $loginController->muestraLogin();
+        }
         break;
     case 'obtieneBares':
-        $limite = $array_ruta[1];
-        $numero = $array_ruta[2];
-        $barController->obtieneBares($limite, $numero);
+        if (isset($_SESSION["user"])) {
+            $limite = $array_ruta[1];
+            $numero = $array_ruta[2];
+            $barController->obtieneBares($limite, $numero);
+        } else {
+            $loginController->muestraLogin();
+        }
         break;
     case 'altaPincho':
-        $nombre = $_POST["nombre"];
-        $bar = $_POST["bar"];
-        $imagenes = $_FILES["file"]["name"];
-        $pinchoController->altaPincho($nombre, $bar, $imagenes);
+        if (isset($_SESSION["user"])) {
+            $nombre = $_POST["nombre"];
+            $bar = $_POST["bar"];
+            $imagenes = $_FILES["file"]["name"];
+            $pinchoController->altaPincho($nombre, $bar, $imagenes);
+        } else {
+            $loginController->muestraLogin();
+        }
         break;
     case 'bajaPincho':
-        $id = $array_ruta[1];
-        $pinchoController->bajaPincho($id);
+        if (isset($_SESSION["user"])) {
+            $id = $array_ruta[1];
+            $pinchoController->bajaPincho($id);
+        } else {
+            $loginController->muestraLogin();
+        }
         break;
     case 'modificaPincho':
-        $id = $_GET["id_pincho"];
-        $bar = $_GET["bar"];
-        $nombre = $_GET["nombre"];
-        $pinchoController->modificaPincho($id, $nombre, $bar);
+        if (isset($_SESSION["user"])) {
+            $id = $_GET["id_pincho"];
+            $bar = $_GET["bar"];
+            $nombre = $_GET["nombre"];
+            $pinchoController->modificaPincho($id, $nombre, $bar);
+        } else {
+            $loginController->muestraLogin();
+        }
         break;
     case 'obtienePinchos':
-        $limite = $array_ruta[1];
-        $numero = $array_ruta[2];
-        $pinchoController->obtienePinchos($limite, $numero);
+        if (isset($_SESSION["user"])) {
+            $limite = $array_ruta[1];
+            $numero = $array_ruta[2];
+            $pinchoController->obtienePinchos($limite, $numero);
+        } else {
+            $loginController->muestraLogin();
+        }
         break;
     case 'fichaPincho':
-        $nombre = $_GET["nombre"];
-        $bar = $_GET["bar"];
-        $id = $_GET["id"];
-        $pinchoController->verFichaPincho($nombre, $bar, $id);
+        if (isset($_SESSION["user"])) {
+            $nombre = $_GET["nombre"];
+            $bar = $_GET["bar"];
+            $id = $_GET["id"];
+            $pinchoController->verFichaPincho($nombre, $bar, $id);
+        } else {
+            $loginController->muestraLogin();
+        }
         break;
     case 'altaUsuario':
-        $email = $_POST["correo"];
-        $password = $_POST["password"];
-        $userController->altaUsuario($email, $password);
+        if (isset($_SESSION["user"])) {
+            $email = $_POST["correo"];
+            $password = $_POST["password"];
+            $userController->altaUsuario($email, $password);
+        } else {
+            $loginController->muestraLogin();
+        }
+
         break;
     case 'bajaUsuario':
-        $id = $array_ruta[1];
-        $userController->bajaUsuario($id);
+        if (isset($_SESSION["user"])) {
+            $id = $array_ruta[1];
+            $userController->bajaUsuario($id);
+        } else {
+            $loginController->muestraLogin();
+        }
+
         break;
     case 'modificaUsuario':
-        $pwd = $_GET["pwd"];
-        $admin = $_GET["admin"];
-        if ($admin == 1) {
-            $admin = "true";
+        if (isset($_SESSION["user"])) {
+            $pwd = $_GET["pwd"];
+            $admin = $_GET["admin"];
+            if ($admin == 1) {
+                $admin = "true";
+            } else {
+                $admin = "false";
+            }
+            $email = $_GET["email"];
+            $id = $_GET["id_usuario"];
+            $userController->modificaUsuario($id, $email, $password, $admin);
         } else {
-            $admin = "false";
+            $loginController->muestraLogin();
         }
-        $email = $_GET["email"];
-        $id = $_GET["id_usuario"];
-        $userController->modificaUsuario($id, $email, $password, $admin);
         break;
     case 'obtieneUsuarios':
-        $limite = $array_ruta[1];
-        $numero = $array_ruta[2];
-        $userController->obtieneUsuarios($limite, $numero);
+        if (isset($_SESSION["user"])) {
+            $limite = $array_ruta[1];
+            $numero = $array_ruta[2];
+            $userController->obtieneUsuarios($limite, $numero);
+        } else {
+            $loginController->muestraLogin();
+        }
         break;
     case 'fichaUsuario':
-        $pwd = $_GET["pwd"];
-        $admin = $_GET["admin"];
-        $email = $_GET["email"];
-        $id = $_GET["id"];
-        $userController->verFichaUsuario($pwd, $admin, $email, $id);
+        if (isset($_SESSION["user"])) {
+            $pwd = $_GET["pwd"];
+            $admin = $_GET["admin"];
+            $email = $_GET["email"];
+            $id = $_GET["id"];
+            $userController->verFichaUsuario($pwd, $admin, $email, $id);
+        } else {
+            $loginController->muestraLogin();
+        }
         break;
     case 'altaResegna':
-        $puntuacion = $_POST["puntuacion"];
-        $descripcion = $_POST["descripcion"];
-        $usuario = $_POST["usuario"];
-        $pincho = $_POST["pincho"];
-        $resegnaController->altaResegna($puntuacion, $descripcion, $usuario, $pincho);
+        if (isset($_SESSION["user"])) {
+            $puntuacion = $_POST["puntuacion"];
+            $descripcion = $_POST["descripcion"];
+            $usuario = $_POST["usuario"];
+            $pincho = $_POST["pincho"];
+            $resegnaController->altaResegna($puntuacion, $descripcion, $usuario, $pincho);
+        } else {
+            $loginController->muestraLogin();
+        }
         break;
     case 'bajaResegna':
-        $id = $array_ruta[1];
-        $resegnaController->bajaResegna($id);
+        if (isset($_SESSION["user"])) {
+            $id = $array_ruta[1];
+            $resegnaController->bajaResegna($id);
+        } else {
+            $loginController->muestraLogin();
+        }
         break;
     case 'fichaResegna':
-        $puntuacion = $_GET["puntuacion"];
-        $descripcion = $_GET["descripcion"];
-        $usuario = $_GET["usuario"];
-        $pincho = $_GET["pincho"];
-        $id = $_GET["id"];
-        $resegnaController->verFichaResegna($puntuacion, $descripcion, $usuario, $pincho, $id);
+        if (isset($_SESSION["user"])) {
+            $puntuacion = $_GET["puntuacion"];
+            $descripcion = $_GET["descripcion"];
+            $usuario = $_GET["usuario"];
+            $pincho = $_GET["pincho"];
+            $id = $_GET["id"];
+            $resegnaController->verFichaResegna($puntuacion, $descripcion, $usuario, $pincho, $id);
+        } else {
+            $loginController->muestraLogin();
+        }
         break;
     case 'modificaResegna':
-        $puntuacion = $_GET["puntuacion"];
-        $descripcion = $_GET["descripcion"];
-        $usuario = $_GET["usuario"];
-        $pincho = $_GET["pincho"];
-        $id = $_GET["id_resegna"];
-        $resegnaController->modificaResegna($id, $puntuacion, $descripcion, $usuario, $pincho);
+        if (isset($_SESSION["user"])) {
+            $puntuacion = $_GET["puntuacion"];
+            $descripcion = $_GET["descripcion"];
+            $usuario = $_GET["usuario"];
+            $pincho = $_GET["pincho"];
+            $id = $_GET["id_resegna"];
+            $resegnaController->modificaResegna($id, $puntuacion, $descripcion, $usuario, $pincho);
+        } else {
+            $loginController->muestraLogin();
+        }
+
         break;
     case 'obtieneResegnas':
-        $limite = $array_ruta[1];
-        $numero = $array_ruta[2];
-        $resegnaController->obtieneResegnas($limite, $numero);
+        if (isset($_SESSION["user"])) {
+            $limite = $array_ruta[1];
+            $numero = $array_ruta[2];
+            $resegnaController->obtieneResegnas($limite, $numero);
+        } else {
+            $loginController->muestraLogin();
+        }
+
         break;
     default:
         header("Location: " . $home . "home");

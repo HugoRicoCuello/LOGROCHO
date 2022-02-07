@@ -34,6 +34,7 @@
             <a id="pinchos" class="btn btn-outline-success me-2 <?php echo ($aux_pincho == true) ? "active" : ""; ?>" type="button" href="<?php echo $rutaVista ?>index.php/administracion?listado=pinchos">Pinchos</a>
             <a id="resegna" class="btn btn-outline-success me-2 <?php echo ($aux_resegna == true) ? "active" : ""; ?>" type="button" href="<?php echo $rutaVista ?>index.php/administracion?listado=resegna">Reseñas</a>
             <a id="usuario" class="btn btn-outline-success me-2 <?php echo ($aux_usuario == true) ? "active" : ""; ?>" type="button" href="<?php echo $rutaVista ?>index.php/administracion?listado=usuario">Usuarios</a>
+            <a id="cerrar_sesion" href="<?php echo $rutaVista?>index.php/cerrarSesion">Cerrar sesion</a>
         </div>
     </nav>
     <?php

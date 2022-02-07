@@ -10,13 +10,9 @@
     gap: 150px;
 }
 
-h2 {
-    margin: 0;
-}
-
 .buscador {
     text-align: center;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .botones {
