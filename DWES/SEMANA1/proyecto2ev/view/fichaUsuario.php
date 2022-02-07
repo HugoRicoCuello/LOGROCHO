@@ -12,6 +12,30 @@
 </head>
 
 <body>
+    <?php
+    $aux_bar = false;
+    $aux_pincho = false;
+    $aux_usuario = false;
+    $aux_resegna = false;
+    if (strpos($_SERVER["REQUEST_URI"], "bar")) {
+        $aux_bar = true;
+    } else if (strpos($_SERVER["REQUEST_URI"], "pincho")) {
+        $aux_pincho = true;
+    } else if (strpos($_SERVER["REQUEST_URI"], "usuario")) {
+        $aux_usuario = true;
+    } else if (strpos($_SERVER["REQUEST_URI"], "resegna")) {
+        $aux_resegna = true;
+    }
+    ?>
+    <nav class="navbar navbar-dark bg-dark">
+        <div id="menu" class="container-fluid">
+            <img id="logo" src="../img/utiles/logo.png">
+            <a id="bares" class="btn btn-outline-success me-2 <?php echo ($aux_bar == true) ? "active" : ""; ?>" type="button" href="<?php echo $rutaVista ?>index.php/administracion?listado=bares">Bares</a>
+            <a id="pinchos" class="btn btn-outline-success me-2 <?php echo ($aux_pincho == true) ? "active" : ""; ?>" type="button" href="<?php echo $rutaVista ?>index.php/administracion?listado=pinchos">Pinchos</a>
+            <a id="resegna" class="btn btn-outline-success me-2 <?php echo ($aux_resegna == true) ? "active" : ""; ?>" type="button" href="<?php echo $rutaVista ?>index.php/administracion?listado=resegna">Reseñas</a>
+            <a id="usuario" class="btn btn-outline-success me-2 <?php echo ($aux_usuario == true) ? "active" : ""; ?>" type="button" href="<?php echo $rutaVista ?>index.php/administracion?listado=usuario">Usuarios</a>
+        </div>
+    </nav>
     <h2 id="titulo_resegna">FICHA DEL USUARIO</h2>
     <form action="<?php echo $rutaVista ?>index.php/modificaUsuario" class="formulario" method="GET">
         <div class="eliminar">
