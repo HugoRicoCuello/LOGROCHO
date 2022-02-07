@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 31-01-2022 a las 21:37:09
+-- Tiempo de generación: 07-02-2022 a las 13:02:35
 -- Versión del servidor: 10.4.21-MariaDB
--- Versión de PHP: 7.4.23
+-- Versión de PHP: 8.0.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,21 +32,63 @@ CREATE TABLE `bares` (
   `nombre` varchar(255) NOT NULL,
   `puntuacion` float NOT NULL,
   `latitud` double NOT NULL,
-  `longitud` double NOT NULL,
-  `imagen` varchar(255) NOT NULL
+  `longitud` double NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `bares`
 --
 
-INSERT INTO `bares` (`id`, `nombre`, `puntuacion`, `latitud`, `longitud`, `imagen`) VALUES
-(5, 'El Muro', 0, 0, 0, 'bar1.jpg'),
-(6, 'Donosti', 0, 0, 0, 'bar2.jpg'),
-(7, 'La Taberna del Laurel', 0, 0, 0, 'bar3.jpg'),
-(8, 'Letras del Laurel', 0, 0, 0, 'bar4.jpg'),
-(9, 'Bar Achurri', 0, 0, 0, 'bar5.jpg'),
-(10, 'Paganos', 0, 0, 0, 'bar6.jpg');
+INSERT INTO `bares` (`id`, `nombre`, `puntuacion`, `latitud`, `longitud`) VALUES
+(5, 'El Muro', 0, 42.465359382007364, -2.4486111279235963),
+(6, 'Donosti', 0, 42.46557670698048, -2.44819164675331),
+(7, 'La Taberna del Laurel', 0, 42.46553872838531, -2.4479557179337275),
+(8, 'Letras del Laurel', 0, 42.46556942836399, -2.4489130823515577),
+(9, 'Bar Achurri', 0, 42.46554521389095, -2.4481775001426356),
+(10, 'Paganos', 0, 42.46549634217663, -2.4488521289783067),
+(17, 'Juan y Pinchame', 0, 42.46569218319536, -2.447998486433555);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `imagenes_bares`
+--
+
+CREATE TABLE `imagenes_bares` (
+  `id` int(11) NOT NULL,
+  `imagen` varchar(255) NOT NULL,
+  `bar` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `imagenes_bares`
+--
+
+INSERT INTO `imagenes_bares` (`id`, `imagen`, `bar`) VALUES
+(1, 'img_bares/17/bar1.jpg', 17);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `imagenes_pinchos`
+--
+
+CREATE TABLE `imagenes_pinchos` (
+  `id` int(11) NOT NULL,
+  `imagen` varchar(255) NOT NULL,
+  `pincho` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `imagenes_pinchos`
+--
+
+INSERT INTO `imagenes_pinchos` (`id`, `imagen`, `pincho`) VALUES
+(1, 'img_pinchos/15/pinchoTortilla3.jpg', 15),
+(2, 'img_pinchos/15/pinchoTortilla2.jpg', 15),
+(3, 'img_pinchos/15/pinchoTortilla.jpg', 15),
+(10, 'img_pinchos/20/choripan2.jpg', 20),
+(11, 'img_pinchos/20/choripan1.jpg', 20);
 
 -- --------------------------------------------------------
 
@@ -57,18 +99,17 @@ INSERT INTO `bares` (`id`, `nombre`, `puntuacion`, `latitud`, `longitud`, `image
 CREATE TABLE `pinchos` (
   `id` int(11) NOT NULL,
   `nombre` varchar(255) NOT NULL,
-  `bar` int(11) NOT NULL,
-  `imagen` varchar(255) NOT NULL
+  `bar` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `pinchos`
 --
 
-INSERT INTO `pinchos` (`id`, `nombre`, `bar`, `imagen`) VALUES
-(1, 'pincho tortilla', 5, ''),
-(7, 'pincho2', 5, ''),
-(8, 'pincho3', 5, '');
+INSERT INTO `pinchos` (`id`, `nombre`, `bar`) VALUES
+(1, 'pincho tortilla', 5),
+(15, 'Pincho Tortilla Achurri', 9),
+(20, 'Choripan Donosti', 6);
 
 -- --------------------------------------------------------
 
@@ -89,12 +130,9 @@ CREATE TABLE `reseñas` (
 --
 
 INSERT INTO `reseñas` (`id`, `puntuacion`, `descripcion`, `usuario`, `pincho`) VALUES
-(12, 4.8, 'He cambiado el texto', 1, 7),
-(14, 4.8, 'Reseña de ejemplo2 para ver que funciona', 1, 7),
-(15, 4.8, 'Reseña de ejemplo2 para ver que funciona', 1, 7),
-(16, 4.8, 'Reseña de ejemplo2 para ver que funciona', 1, 7),
-(17, 4.8, 'Reseña de ejemplo2 para ver que funciona', 1, 7),
-(18, 4.8, 'Reseña de ejemplo2 para ver que funciona', 1, 7);
+(22, 1.7, 'La tortilla estaba fria y seca. No recomendable', 6, 1),
+(25, 3.8, 'Mu rico el pincho de tortilla', 5, 1),
+(31, 4.8, 'El choripan estaba delicioso. Recomendable totalmente', 5, 20);
 
 -- --------------------------------------------------------
 
@@ -130,6 +168,20 @@ ALTER TABLE `bares`
   ADD UNIQUE KEY `nombre` (`nombre`);
 
 --
+-- Indices de la tabla `imagenes_bares`
+--
+ALTER TABLE `imagenes_bares`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `bar` (`bar`);
+
+--
+-- Indices de la tabla `imagenes_pinchos`
+--
+ALTER TABLE `imagenes_pinchos`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `pincho` (`pincho`);
+
+--
 -- Indices de la tabla `pinchos`
 --
 ALTER TABLE `pinchos`
@@ -160,29 +212,53 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `bares`
 --
 ALTER TABLE `bares`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+
+--
+-- AUTO_INCREMENT de la tabla `imagenes_bares`
+--
+ALTER TABLE `imagenes_bares`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `imagenes_pinchos`
+--
+ALTER TABLE `imagenes_pinchos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de la tabla `pinchos`
 --
 ALTER TABLE `pinchos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT de la tabla `reseñas`
 --
 ALTER TABLE `reseñas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- Restricciones para tablas volcadas
 --
+
+--
+-- Filtros para la tabla `imagenes_bares`
+--
+ALTER TABLE `imagenes_bares`
+  ADD CONSTRAINT `imagenes_bares_ibfk_1` FOREIGN KEY (`bar`) REFERENCES `bares` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `imagenes_pinchos`
+--
+ALTER TABLE `imagenes_pinchos`
+  ADD CONSTRAINT `imagenes_pinchos_ibfk_1` FOREIGN KEY (`pincho`) REFERENCES `pinchos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `pinchos`

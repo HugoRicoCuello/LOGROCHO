@@ -13,26 +13,48 @@
 
 <body>
     <h2 id="titulo_resegna">FICHA DE LA RESEÑA</h2>
-    <form action="javascript:void(0)" class="formulario" method="POST">
+    <form action="<?php echo $rutaVista ?>index.php/modificaResegna" class="formulario" method="GET">
         <div class="eliminar">
             <a class="btn btn-danger" href="http://localhost/DWES/SEMANA1/proyecto2ev/index.php/bajaResegna/<?php echo $id ?>">ELIMINAR</a>
             <input type="hidden" name="id_resegna" value="<?php echo $id ?>">
         </div>
         <div class="form-group">
             <label for="puntuacion">Puntuacion</label>
-            <input type="number" step="any" class="form-control" id="puntuacion" value="<?php echo $puntuacion ?>">
+            <input type="number" step="any" class="form-control" id="puntuacion" name="puntuacion" value="<?php echo $puntuacion ?>">
         </div>
         <div class="form-group">
             <label for="descripcion">Descripcion</label>
-            <input type="text" class="form-control" id="descripcion" value="<?php echo $descripcion ?>">
+            <input type="text" class="form-control" id="descripcion" name="descripcion" value="<?php echo $descripcion ?>">
         </div>
         <div class="form-group">
             <label for="usuario">Usuario</label>
-            <input type="text" class="form-control" id="usuario" value="<?php echo $usuario ?>">
+            <select name="usuario" id="usuario">
+                <?php
+                $usuarios = $bd->obtieneTodosUsuarios();
+                foreach ($usuarios as $usuario) {
+                    if ($id_usuario == $usuario[0]) {
+                        echo '<option value="' . $usuario[0] . '" selected>' . $usuario[1] . "</option>";
+                    } else {
+                        echo '<option value="' . $usuario[0] . '">' . $usuario[1] . "</option>";
+                    }
+                }
+                ?>
+            </select>
         </div>
         <div class="form-group">
             <label for="pincho">Pincho</label>
-            <input type="text" class="form-control" id="pincho" value="<?php echo $pincho ?>">
+            <select name="pincho" id="pincho">
+                <?php
+                $pinchos = $bd->obtieneTodosPinchos();
+                foreach ($pinchos as $pincho) {
+                    if ($id_pincho == $pincho[0]) {
+                        echo '<option value="' . $pincho[0] . '" selected>' . $pincho[1] . '</option>';
+                    } else {
+                        echo '<option value="' . $pincho[0] . '">' . $pincho[1] . '</option>';
+                    }
+                }
+                ?>
+            </select>
         </div>
         <div class="botones">
             <button type="submit" class="btn btn-success">Aceptar</button>

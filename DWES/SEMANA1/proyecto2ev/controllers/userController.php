@@ -20,13 +20,23 @@ class userController
     function bajaUsuario($id)
     {
         $this->bd->bajaUsuario($id);
-        header("Location:" . $this->ruta_global . "index.php/pruebas");
+        header("Location:" . $this->ruta_global . "index.php/administracion");
     }
 
     function modificaUsuario($id, $email, $password, $admin)
     {
         $this->bd->modificaUsuario($id, $email, $password, $admin);
-        header("Location:" . $this->ruta_global . "index.php/pruebas");
+        header("Location:" . $this->ruta_global . "index.php/administracion");
+    }
+
+    function verFichaUsuario($pwd, $admin, $email, $id){
+        $pwd;
+        $admin;
+        $email;
+        $id;
+        $bd = $this->bd;
+        $rutaVista = $this->ruta_global;
+        require("view/fichaUsuario.php");
     }
 
     function listaUsuarios()

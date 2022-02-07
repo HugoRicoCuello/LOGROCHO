@@ -39,6 +39,9 @@ a:hover {
 .formulario {
     width: 40%;
     margin: 2% auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 #titulo_resegna {

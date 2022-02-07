@@ -46,9 +46,7 @@
                             <?php
                             $bares = $bd->obtieneTodosBares();
                             foreach ($bares as $bar) {
-                                $nombre = $bd->obtieneNombreBar($bar[0]);
-                                $id = $bd->obtieneIdBar($nombre[0]);
-                                echo '<option value="' . $id[0] . '">' . $nombre[0] . "</option>";
+                                echo '<option value="' . $bar[0] . '">' . $bar[1] . "</option>";
                             }
                             ?>
                         </select>
@@ -78,12 +76,12 @@
         pag = 0;
         $.ajax({
             type: "GET",
-            url: "http://localhost/DWES/SEMANA1/proyecto2ev/index.php/obtienePinchos/0/" + valor,
+            url: "http://localhost/DWES/SEMANA1/proyecto2ev/index.php/obtienePinchos/" + pag + "/" + valor,
             dataType: "json",
             success: function(response) {
                 tabla.html("");
                 for (let i = 0; i < response.length; i++) {
-                    tabla.append("<tr><td onclick=''>" + response[i].id + "</td><td onclick=''>" + response[i].nombre + "</td><td onclick=''>" + response[i].bar);
+                    tabla.append("<tr onclick='verFicha(this)'><td class='id'>" + response[i].id + "</td><td class='nombre'>" + response[i].nombre + "</td><td class='bar'>" + response[i].bar);
                 }
             }
         });
@@ -102,7 +100,7 @@
             success: function(response) {
                 tabla.html("");
                 for (let i = 0; i < response.length; i++) {
-                    tabla.append("<tr><td onclick=''>" + response[i].id + "</td><td onclick=''>" + response[i].nombre + "</td><td onclick=''>" + response[i].bar);
+                    tabla.append("<tr onclick='verFicha(this)'><td class='id'>" + response[i].id + "</td><td class='nombre'>" + response[i].nombre + "</td><td class='bar'>" + response[i].bar);
                 }
             }
         });
@@ -120,12 +118,20 @@
                 if (response.length != 0) {
                     tabla.html("");
                     for (let i = 0; i < response.length; i++) {
-                        tabla.append("<tr><td onclick=''>" + response[i].id + "</td><td onclick=''>" + response[i].nombre + "</td><td onclick=''>" + response[i].bar);
+                        tabla.append("<tr onclick='verFicha(this)'><td class='id'>" + response[i].id + "</td><td class='nombre'>" + response[i].nombre + "</td><td class='bar'>" + response[i].bar);
                     }
                 } else {
                     pag -= valor;
                 }
             }
         });
+    }
+
+    function verFicha(tr) {
+        let nombre = tr.getElementsByClassName("nombre")[0].innerHTML;
+        let bar = tr.getElementsByClassName("bar")[0].innerHTML;
+        let id = tr.getElementsByClassName("id")[0].innerHTML;
+
+        window.location = "http://localhost/DWES/SEMANA1/proyecto2ev/index.php/fichaPincho?nombre=" + nombre + "&bar=" + bar + "&id=" + id;
     }
 </script>

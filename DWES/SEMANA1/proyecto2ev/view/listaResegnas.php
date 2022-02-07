@@ -41,7 +41,7 @@
                 <form action="<?php echo $rutaVista ?>index.php/altaResegna" method="POST">
                     <div class="mb-3 mt-3">
                         <label for="puntuacion" class="form-label">Puntuacion</label>
-                        <input type="number" step="any" class="form-control" id="puntuacion" placeholder="Introduce la puntuacion" name="puntuacion">
+                        <input type="number" max="5" min="0" step="any" class="form-control" id="puntuacion" placeholder="Introduce la puntuacion" name="puntuacion">
                     </div>
                     <div class="mb-3 mt-3">
                         <label for="descripcion" class="form-label">Descripcion</label>
@@ -51,11 +51,9 @@
                         <label for="usuario" class="form-label">Usuario</label>
                         <select name="usuario" id="usuario">
                             <?php
-                            $emails = $bd->obtieneTodosUsuarios();
-                            foreach ($emails as $email) {
-                                $correo = $bd->obtieneCorreoUsuario($email[0]);
-                                $id = $bd->obtieneIdUsuario($correo[0]);
-                                echo '<option value="' . $id[0] . '">' . $correo[0] . "</option>";
+                            $usuarios = $bd->obtieneTodosUsuarios();
+                            foreach ($usuarios as $usuario) {
+                                echo '<option value="' . $usuario[0] . '">' . $usuario[1] . "</option>";
                             }
                             ?>
                         </select>
@@ -66,9 +64,7 @@
                             <?php
                             $pinchos = $bd->obtieneTodosPinchos();
                             foreach ($pinchos as $pincho) {
-                                $nombre = $bd->obtieneNombrePincho($pincho[0]);
-                                $id = $bd->obtieneIdPincho($nombre[0]);
-                                echo '<option value="' . $id[0] . '">' . $nombre[0] . '</option>';
+                                echo '<option value="' . $pincho[0] . '">' . $pincho[1] . '</option>';
                             }
                             ?>
                         </select>

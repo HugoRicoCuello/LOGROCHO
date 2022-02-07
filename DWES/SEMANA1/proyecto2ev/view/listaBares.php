@@ -37,7 +37,7 @@
                     <h2 class="modal-title">NUEVO BAR</h2>
                 </div>
                 <div class="modal-body">
-                    <form action="<?php echo $rutaVista ?>index.php/altaBar" method="POST">
+                    <form action="<?php echo $rutaVista ?>index.php/altaBar" method="POST" enctype="multipart/form-data">
                         <div class="mb-3 mt-3">
                             <label for="nombre" class="form-label">Nombre</label>
                             <input type="text" class="form-control" id="nombre" placeholder="Introduce el nombre" name="nombre">
@@ -52,7 +52,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="formFileMultiple" class="form-label">Seleccionar Archivos</label>
-                            <input class="form-control" type="file" id="formFileMultiple" multiple>
+                            <input type="file" class="form-control-file" id="file" name="file[]" multiple>
                         </div>
                         <button type="submit" class="btn btn-success">Aceptar</button>
                         <a type="submit" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</a>
@@ -79,7 +79,7 @@
                 success: function(response) {
                     tabla.html("");
                     for (let i = 0; i < response.length; i++) {
-                        tabla.append("<tr><td onclick=''>" + response[i].id + "</td><td onclick=''>" + response[i].nombre + "</td><td onclick=''>" + response[i].puntuacion + "</td><td onclick=''>" + response[i].latitud + "</td><td onclick=''>" + response[i].longitud);
+                        tabla.append("<tr onclick='verFicha(this)'><td class='id'>" + response[i].id + "</td><td class='nombre'>" + response[i].nombre + "</td><td class='puntuacion'>" + response[i].puntuacion + "</td><td class='lat'>" + response[i].latitud + "</td><td class='lon'>" + response[i].longitud);
                     }
                 }
             });
@@ -98,7 +98,7 @@
                 success: function(response) {
                     tabla.html("");
                     for (let i = 0; i < response.length; i++) {
-                        tabla.append("<tr><td onclick=''>" + response[i].id + "</td><td onclick=''>" + response[i].nombre + "</td><td onclick=''>" + response[i].puntuacion + "</td><td onclick=''>" + response[i].latitud + "</td><td onclick=''>" + response[i].longitud);
+                        tabla.append("<tr onclick='verFicha(this)'><td class='id'>" + response[i].id + "</td><td class='nombre'>" + response[i].nombre + "</td><td class='puntuacion'>" + response[i].puntuacion + "</td><td class='lat'>" + response[i].latitud + "</td><td class='lon'>" + response[i].longitud);
                     }
                 }
             });
@@ -116,12 +116,22 @@
                     if (response.length != 0) {
                         tabla.html("");
                         for (let i = 0; i < response.length; i++) {
-                            tabla.append("<tr><td onclick=''>" + response[i].id + "</td><td onclick=''>" + response[i].nombre + "</td><td onclick=''>" + response[i].puntuacion + "</td><td onclick=''>" + response[i].latitud + "</td><td onclick=''>" + response[i].longitud);
+                            tabla.append("<tr onclick='verFicha(this)'><td class='id'>" + response[i].id + "</td><td class='nombre'>" + response[i].nombre + "</td><td class='puntuacion'>" + response[i].puntuacion + "</td><td class='lat'>" + response[i].latitud + "</td><td class='lon'>" + response[i].longitud);
                         }
                     } else {
                         pag -= valor;
                     }
                 }
             });
+        }
+
+        function verFicha(tr) {
+            let puntuacion = tr.getElementsByClassName("puntuacion")[0].innerHTML;
+            let nombre = tr.getElementsByClassName("nombre")[0].innerHTML;
+            let lat = tr.getElementsByClassName("lat")[0].innerHTML;
+            let lon = tr.getElementsByClassName("lon")[0].innerHTML;
+            let id = tr.getElementsByClassName("id")[0].innerHTML;
+
+            window.location = "http://localhost/DWES/SEMANA1/proyecto2ev/index.php/fichaBar?puntuacion=" + puntuacion + "&nombre=" + nombre + "&lat=" + lat + "&lon=" + lon + "&id=" + id;
         }
     </script>

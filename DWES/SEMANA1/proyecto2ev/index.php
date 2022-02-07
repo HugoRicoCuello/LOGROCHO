@@ -63,13 +63,28 @@ switch ($accion) {
         $nombre = $_POST["nombre"];
         $lat = $_POST["latitud"];
         $long = $_POST["longitud"];
-        $barController->altaBar($nombre, $lat, $long);
+        $imagenes = $_FILES["file"]["name"];
+        $barController->altaBar($nombre, $lat, $long, $imagenes);
         break;
     case 'bajaBar':
-        $barController->bajaBar(8);
+        $id = $array_ruta[1];
+        $barController->bajaBar($id);
         break;
     case 'modificaBar':
-        $barController->modificaBar(9, "casa alvaro", 1.3, 10, 10);
+        $id = $_GET["id_bar"];
+        $nombre = $_GET["nombre"];
+        $lat = $_GET["lat"];
+        $lon = $_GET["lon"];
+        $puntuacion = $_GET["puntuacion"];
+        $barController->modificaBar($id, $nombre, $puntuacion, $lat, $lon);
+        break;
+    case 'fichaBar':
+        $nombre = $_GET["nombre"];
+        $lat = $_GET["lat"];
+        $lon = $_GET["lon"];
+        $puntuacion = $_GET["puntuacion"];
+        $id = $_GET["id"];
+        $barController->verFichaBar($nombre, $puntuacion, $lat, $lon, $id);
         break;
     case 'obtieneBares':
         $limite = $array_ruta[1];
@@ -83,31 +98,58 @@ switch ($accion) {
         $pinchoController->altaPincho($nombre, $bar, $imagenes);
         break;
     case 'bajaPincho':
-        $pinchoController->bajaPincho(1);
+        $id = $array_ruta[1];
+        $pinchoController->bajaPincho($id);
         break;
     case 'modificaPincho':
-        $pinchoController->modificaPincho(1, "pincho tortilla", 5);
+        $id = $_GET["id_pincho"];
+        $bar = $_GET["bar"];
+        $nombre = $_GET["nombre"];
+        $pinchoController->modificaPincho($id, $nombre, $bar);
         break;
     case 'obtienePinchos':
         $limite = $array_ruta[1];
         $numero = $array_ruta[2];
         $pinchoController->obtienePinchos($limite, $numero);
-        break;;
+        break;
+    case 'fichaPincho':
+        $nombre = $_GET["nombre"];
+        $bar = $_GET["bar"];
+        $id = $_GET["id"];
+        $pinchoController->verFichaPincho($nombre, $bar, $id);
+        break;
     case 'altaUsuario':
         $email = $_POST["correo"];
         $password = $_POST["password"];
         $userController->altaUsuario($email, $password);
         break;
     case 'bajaUsuario':
-        $userController->bajaUsuario(3);
+        $id = $array_ruta[1];
+        $userController->bajaUsuario($id);
         break;
     case 'modificaUsuario':
-        $userController->modificaUsuario(3, "email2@email.com", "Admin12345", "true");
+        $pwd = $_GET["pwd"];
+        $admin = $_GET["admin"];
+        if ($admin == 1) {
+            $admin = "true";
+        } else {
+            $admin = "false";
+        }
+        $email = $_GET["email"];
+        $id = $_GET["id_usuario"];
+        $userController->modificaUsuario($id, $email, $password, $admin);
         break;
     case 'obtieneUsuarios':
         $limite = $array_ruta[1];
         $numero = $array_ruta[2];
         $userController->obtieneUsuarios($limite, $numero);
+        break;
+    case 'fichaUsuario':
+        $pwd = $_GET["pwd"];
+        $admin = $_GET["admin"];
+        $email = $_GET["email"];
+        $id = $_GET["id"];
+        $userController->verFichaUsuario($pwd, $admin, $email, $id);
         break;
     case 'altaResegna':
         $puntuacion = $_POST["puntuacion"];
@@ -128,9 +170,14 @@ switch ($accion) {
         $id = $_GET["id"];
         $resegnaController->verFichaResegna($puntuacion, $descripcion, $usuario, $pincho, $id);
         break;
-        /*case 'modificaResegna':
-        $resegnaController->verFichaResegna();
-        break;*/
+    case 'modificaResegna':
+        $puntuacion = $_GET["puntuacion"];
+        $descripcion = $_GET["descripcion"];
+        $usuario = $_GET["usuario"];
+        $pincho = $_GET["pincho"];
+        $id = $_GET["id_resegna"];
+        $resegnaController->modificaResegna($id, $puntuacion, $descripcion, $usuario, $pincho);
+        break;
     case 'obtieneResegnas':
         $limite = $array_ruta[1];
         $numero = $array_ruta[2];

@@ -71,12 +71,8 @@ class BD
     function altaResegna($puntuacion, $descripcion, $usuario, $pincho)
     {
         try {
-            var_dump($usuario);
-            echo "<br>";
-            var_dump($pincho);
             $sql = "INSERT INTO reseñas (puntuacion,descripcion,usuario,pincho) VALUES ($puntuacion, '$descripcion',$usuario,$pincho)";
             $this->db->query($sql);
-            var_dump($this->db->errorInfo());
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
@@ -374,6 +370,38 @@ class BD
             echo $e->getMessage();
         }
     }
+    
+    /**
+     * guardaImagenesBares
+     *
+     * @param  mixed $idBar
+     * @param  mixed $fotos
+     * @return void
+     */
+    function guardaImagenesBares($idBar, $fotos)
+    {
+        try {
+            $this->db->beginTransaction();
+            $ruta = "img_bares/" . $idBar . "/";
+
+            for ($i = 0; $i < count($fotos); $i++) {
+                if ($fotos[$i] != "" && $fotos[$i] != null) {
+                    $rutaCompleta = $ruta . "" . $fotos[$i];
+                    $sql = "INSERT INTO imagenes_bares (imagen, bar) VALUES ('$rutaCompleta', '$idBar')";
+                    $resultado = $this->db->query($sql);
+                    if (!$resultado) {
+                        $this->db->rollBack();
+                        return false;
+                    }
+                }
+            }
+
+            $this->db->commit();
+            return true;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
 
 
     /**
@@ -440,7 +468,7 @@ class BD
             $sql = "SELECT id FROM bares where nombre=" . "'$nombre'";
             $resultado = $this->db->query($sql);
             foreach ($resultado as $id) {
-                return $id;
+                return $id[0];
             }
         } catch (PDOException $e) {
             echo $e->getMessage();

@@ -72,7 +72,7 @@
             success: function(response) {
                 tabla.html("");
                 for (let i = 0; i < response.length; i++) {
-                    tabla.append("<tr><td onclick=''>" + response[i].id + "</td><td onclick=''>" + response[i].email + "</td><td onclick=''>" + response[i].password + "</td><td onclick=''>" + response[i].admin + "</td></tr>");
+                    tabla.append("<tr onclick='verFicha(this)'><td class='id'>" + response[i].id + "</td><td class='email'>" + response[i].email + "</td><td class='pwd'>" + response[i].password + "</td><td class='admin'>" + response[i].admin + "</td></tr>");
                 }
             }
         });
@@ -86,12 +86,12 @@
         }
         $.ajax({
             type: "GET",
-            url: "http://localhost/DWES/SEMANA1/proyecto2ev/index.php/obtieneUsuarios/0/" + valor,
+            url: "http://localhost/DWES/SEMANA1/proyecto2ev/index.php/obtieneUsuarios/" + pag + "/" + valor,
             dataType: "json",
             success: function(response) {
                 tabla.html("");
                 for (let i = 0; i < response.length; i++) {
-                    tabla.append("<tr><td onclick=''>" + response[i].id + "</td><td onclick=''>" + response[i].email + "</td><td onclick=''>" + response[i].password + "</td><td onclick=''>" + response[i].admin + "</td></tr>");
+                    tabla.append("<tr onclick='verFicha(this)'><td class='id'>" + response[i].id + "</td><td class='email'>" + response[i].email + "</td><td class='pwd'>" + response[i].password + "</td><td class='admin'>" + response[i].admin + "</td></tr>");
                 }
             }
         });
@@ -103,18 +103,27 @@
         pag += valor;
         $.ajax({
             type: "GET",
-            url: "http://localhost/DWES/SEMANA1/proyecto2ev/index.php/obtieneUsuarios/0/" + valor,
+            url: "http://localhost/DWES/SEMANA1/proyecto2ev/index.php/obtieneUsuarios/" + pag + "/" + valor,
             dataType: "json",
             success: function(response) {
                 if (response.length != 0) {
                     tabla.html("");
                     for (let i = 0; i < response.length; i++) {
-                        tabla.append("<tr><td onclick=''>" + response[i].id + "</td><td onclick=''>" + response[i].email + "</td><td onclick=''>" + response[i].password + "</td><td onclick=''>" + response[i].admin + "</td></tr>");
+                        tabla.append("<tr onclick='verFicha(this)'><td class='id'>" + response[i].id + "</td><td class='email'>" + response[i].email + "</td><td class='pwd'>" + response[i].password + "</td><td class='admin'>" + response[i].admin + "</td></tr>");
                     }
                 } else {
                     pag -= valor;
                 }
             }
         });
+    }
+
+    function verFicha(tr) {
+        let email = tr.getElementsByClassName("email")[0].innerHTML;
+        let pwd = tr.getElementsByClassName("pwd")[0].innerHTML;
+        let admin = tr.getElementsByClassName("admin")[0].innerHTML;
+        let id = tr.getElementsByClassName("id")[0].innerHTML;
+
+        window.location = "http://localhost/DWES/SEMANA1/proyecto2ev/index.php/fichaUsuario?email=" + email + "&pwd=" + pwd + "&admin=" + admin + "&id=" + id;
     }
 </script>

@@ -12,6 +12,15 @@ class pinchoController
     }
 
 
+    function verFichaPincho($nombre, $id_bar, $id_pincho){
+        $nombre;
+        $id_bar;
+        $id_pincho;
+        $bd = $this->bd;
+        $rutaVista = $this->ruta_global;
+        require("view/fichaPincho.php");
+    }
+
     function altaPincho($nombre, $bar, $imagenes)
     {
         $this->bd->altaPincho($nombre, $bar);
@@ -36,13 +45,13 @@ class pinchoController
     function bajaPincho($id)
     {
         $this->bd->bajaPincho($id);
-        header("Location:" . $this->ruta_global . "index.php/pruebas");
+        header("Location:" . $this->ruta_global . "index.php/administracion");
     }
 
     function modificaPincho($id, $nombre, $bar)
     {
         $this->bd->modificaPincho($id, $nombre, $bar);
-        header("Location:" . $this->ruta_global . "index.php/pruebas");
+        header("Location:" . $this->ruta_global . "index.php/administracion");
     }
 
     function listaPinchos()

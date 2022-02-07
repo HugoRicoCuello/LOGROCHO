@@ -12,23 +12,30 @@
 </head>
 
 <body>
-    <h2 id="titulo_resegna">FICHA DEL USUARIO</h2>
-    <form action="<?php echo $rutaVista ?>index.php/modificaUsuario" class="formulario" method="GET">
+    <h2 id="titulo_resegna">FICHA DEL PINCHO</h2>
+    <form action="<?php echo $rutaVista ?>index.php/modificaPincho" class="formulario" method="GET">
         <div class="eliminar">
-            <a class="btn btn-danger" href="http://localhost/DWES/SEMANA1/proyecto2ev/index.php/bajaUsuario/<?php echo $id ?>">ELIMINAR</a>
-            <input type="hidden" name="id_usuario" value="<?php echo $id ?>">
+            <a class="btn btn-danger" href="http://localhost/DWES/SEMANA1/proyecto2ev/index.php/bajaPincho/<?php echo $id_pincho ?>">ELIMINAR</a>
+            <input type="hidden" name="id_pincho" value="<?php echo $id_pincho ?>">
         </div>
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" value="<?php echo $email ?>">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre ?>">
         </div>
         <div class="form-group">
-            <label for="descripcion">Contraseña</label>
-            <input type="password" class="form-control" id="pwd" name="pwd" value="<?php echo $pwd ?>">
-        </div>
-        <div class="form-group">
-            <label for="admin">Administrador</label>
-            <input type="number" min="0" max="1" lass="form-control" id="admin" name="admin" value="<?php echo $admin ?>">
+            <label for="bar">Bar</label>
+            <select name="bar" id="bar">
+                <?php
+                $bares = $bd->obtieneTodosBares();
+                foreach ($bares as $bar) {
+                    if ($id_bar == $bar[0]) {
+                        echo '<option value="' . $bar[0] . '" selected>' . $bar[1] . "</option>";
+                    } else {
+                        echo '<option value="' . $bar[0] . '">' . $bar[1] . "</option>";
+                    }
+                }
+                ?>
+            </select>
         </div>
         <div class="botones">
             <button type="submit" class="btn btn-success">Aceptar</button>

@@ -12,23 +12,27 @@
 </head>
 
 <body>
-    <h2 id="titulo_resegna">FICHA DEL USUARIO</h2>
-    <form action="<?php echo $rutaVista ?>index.php/modificaUsuario" class="formulario" method="GET">
+    <h2 id="titulo_resegna">FICHA DEL BAR</h2>
+    <form action="<?php echo $rutaVista ?>index.php/modificaBar" class="formulario" method="GET">
         <div class="eliminar">
-            <a class="btn btn-danger" href="http://localhost/DWES/SEMANA1/proyecto2ev/index.php/bajaUsuario/<?php echo $id ?>">ELIMINAR</a>
-            <input type="hidden" name="id_usuario" value="<?php echo $id ?>">
+            <a class="btn btn-danger" href="http://localhost/DWES/SEMANA1/proyecto2ev/index.php/bajaBar/<?php echo $id ?>">ELIMINAR</a>
+            <input type="hidden" name="id_bar" value="<?php echo $id ?>">
         </div>
         <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" name="email" value="<?php echo $email ?>">
+            <label for="nombre">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" value="<?php echo $nombre ?>">
         </div>
         <div class="form-group">
-            <label for="descripcion">Contraseña</label>
-            <input type="password" class="form-control" id="pwd" name="pwd" value="<?php echo $pwd ?>">
+            <label for="puntuacion">Puntuacion</label>
+            <input type="text" class="form-control" id="puntuacion" name="puntuacion" value="<?php echo $puntuacion ?>">
         </div>
         <div class="form-group">
-            <label for="admin">Administrador</label>
-            <input type="number" min="0" max="1" lass="form-control" id="admin" name="admin" value="<?php echo $admin ?>">
+            <label for="lat">Latitud</label>
+            <input type="text" class="form-control" id="lat" name="lat" value="<?php echo $lat ?>">
+        </div>
+        <div class="form-group">
+            <label for="lon">Longitud</label>
+            <input type="text" class="form-control" id="lon" name="lon" value="<?php echo $lon ?>">
         </div>
         <div class="botones">
             <button type="submit" class="btn btn-success">Aceptar</button>
