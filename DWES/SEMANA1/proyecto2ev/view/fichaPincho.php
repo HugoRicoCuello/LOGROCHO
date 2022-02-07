@@ -37,6 +37,14 @@
                 ?>
             </select>
         </div>
+        <div>
+            <?php
+            $imagenes = $bd->obtieneImagenesPincho($id_pincho);
+            foreach ($imagenes as $imagen) {
+                echo "<img src='$rutaVista/$imagen[0]'></img>";
+            }
+            ?>
+        </div>
         <div class="botones">
             <button type="submit" class="btn btn-success">Aceptar</button>
             <a class="btn btn-danger" href="http://localhost/DWES/SEMANA1/proyecto2ev/index.php/administracion">Cancelar</a>

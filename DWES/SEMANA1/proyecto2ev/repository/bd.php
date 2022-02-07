@@ -370,7 +370,7 @@ class BD
             echo $e->getMessage();
         }
     }
-    
+
     /**
      * guardaImagenesBares
      *
@@ -398,6 +398,44 @@ class BD
 
             $this->db->commit();
             return true;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+
+    /**
+     * obtieneImagenesPincho
+     *
+     * @param  mixed $idPincho
+     * @return void
+     */
+    function obtieneImagenesPincho($idPincho)
+    {
+        try {
+            $sql = "SELECT imagen from imagenes_pinchos where pincho=" . $idPincho;
+            $imagenes = array();
+            $resultado = $this->db->query($sql);
+            foreach ($resultado as $imagen) {
+                $imagenes[] = $imagen;
+            }
+            return $imagenes;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    
+    function obtieneImagenesBares($idBar)
+    {
+        try {
+            $sql = "SELECT imagen from imagenes_bares where bar=" . $idBar;
+            $imagenes = array();
+            $resultado = $this->db->query($sql);
+            foreach ($resultado as $imagen) {
+                $imagenes[] = $imagen;
+            }
+            return $imagenes;
         } catch (PDOException $e) {
             echo $e->getMessage();
         }

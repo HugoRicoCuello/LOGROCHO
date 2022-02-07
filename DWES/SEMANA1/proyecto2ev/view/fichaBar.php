@@ -34,6 +34,14 @@
             <label for="lon">Longitud</label>
             <input type="text" class="form-control" id="lon" name="lon" value="<?php echo $lon ?>">
         </div>
+        <div>
+            <?php
+            $imagenes = $bd->obtieneImagenesBares($id);
+            foreach ($imagenes as $imagen) {
+                echo "<img src='$rutaVista/$imagen[0]'></img>";
+            }
+            ?>
+        </div>
         <div class="botones">
             <button type="submit" class="btn btn-success">Aceptar</button>
             <a class="btn btn-danger" href="http://localhost/DWES/SEMANA1/proyecto2ev/index.php/administracion">Cancelar</a>
