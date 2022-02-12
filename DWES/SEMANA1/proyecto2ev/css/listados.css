@@ -30,3 +30,7 @@
 tbody tr {
     cursor: pointer;
 }
+
+th:hover {
+    cursor: pointer;
+}
