@@ -7,7 +7,7 @@
 .cabecera {
     display: flex;
     align-items: center;
-    gap: 150px;
+    gap: 75px;
 }
 
 .buscador {

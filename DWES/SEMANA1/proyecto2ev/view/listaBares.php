@@ -8,6 +8,18 @@
                 <option value="10">todos</option>
             </select>
             <input type="text" class="buscador" placeholder="buscar...">
+            <div class="columnas">
+                <input type="checkbox" id="ID" name="ID" value="ID" onclick="ocultaColumnas(1)" checked>
+                <label for="ID">ID</label>
+                <input type="checkbox" id="nombre" name="nombre" value="nombre" onclick="ocultaColumnas(2)" checked>
+                <label for="nombre">Nombre</label>
+                <input type="checkbox" id="puntuacion" name="puntuacion" value="puntuacion" onclick="ocultaColumnas(3)" checked>
+                <label for="puntuacion">Puntuacion</label>
+                <input type="checkbox" id="latitud" name="latitud" value="latitud" onclick="ocultaColumnas(4)" checked>
+                <label for="latitud">Latitud</label>
+                <input type="checkbox" id="longitud" name="longitud" value="longitud" onclick="ocultaColumnas(5)" checked>
+                <label for="longitud">Longitud</label>
+            </div>
             <button type="button" class="btn btn-success nuevo" data-bs-toggle="modal" data-bs-target="#nuevoBar">
                 NUEVO
             </button>
@@ -190,5 +202,10 @@
                     }
                 }
             }
+        }
+
+        function ocultaColumnas(id_columna) {
+            $('td:nth-child(' + id_columna + ')').toggle();
+            $('th:nth-child(' + id_columna + ')').toggle();
         }
     </script>
