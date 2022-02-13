@@ -278,6 +278,19 @@ footer {
     margin-top: 20px;
 }
 
+#adm{
+    margin-left: 475px;
+    margin-right: 45px;
+}
+
+#adm:hover{
+    cursor: pointer;
+}
+
+#registro:hover{
+    cursor: pointer;
+}
+
 
 
 

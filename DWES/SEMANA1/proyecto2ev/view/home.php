@@ -18,6 +18,8 @@
             <a class="btn btn-outline-success me-2" type="button" href="#">Pinchos</a>
             <a class="btn btn-outline-success me-2" type="button" href="#">Mejores Valorados</a>
             <a class="btn btn-outline-success me-2" type="button" href="#">Favoritos</a>
+            <a href="http://localhost/DWES/SEMANA1/proyecto2ev/index.php/login" id="adm" class="enlaces">Administracion</a>
+            <a href="http://localhost/DWES/SEMANA1/proyecto2ev/index.php/registro" id="registro" class="enlaces">Registro</a>
         </div>
     </nav>
     <div id="slider">

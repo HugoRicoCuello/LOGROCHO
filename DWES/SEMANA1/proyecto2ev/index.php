@@ -50,6 +50,13 @@ switch ($accion) {
     case 'cerrarSesion':
         $loginController->cerrarSesion();
         break;
+    case 'registro':
+        if (isset($_SESSION["user"])) {
+            $loginController->muestraRegistro();
+        } else {
+            $loginController->muestraLogin();
+        }
+        break;
     case 'administracion':
         if (isset($_SESSION["user"])) {
             $loginController->muestraAdministracion();
@@ -58,11 +65,7 @@ switch ($accion) {
         }
         break;
     case 'home':
-        if (isset($_SESSION["user"])) {
-            $frontController->muestraHome();
-        } else {
-            $loginController->muestraLogin();
-        }
+        $frontController->muestraHome();
         break;
     case 'bares':
         if (isset($_SESSION["user"])) {
@@ -274,7 +277,6 @@ switch ($accion) {
         } else {
             $loginController->muestraLogin();
         }
-
         break;
     case 'obtieneResegnas':
         if (isset($_SESSION["user"])) {
@@ -284,7 +286,6 @@ switch ($accion) {
         } else {
             $loginController->muestraLogin();
         }
-
         break;
     default:
         header("Location: " . $home . "home");

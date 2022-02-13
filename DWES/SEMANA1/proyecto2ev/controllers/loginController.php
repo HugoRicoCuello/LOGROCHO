@@ -13,6 +13,10 @@ class loginController
         $this->bd = new BD();
     }
 
+    public function muestraRegistro(){
+        
+    }
+
     public function compruebaLogin($usuario, $contrasegna)
     {
         if (preg_match($this->exp_correo, $usuario) && preg_match($this->exp_contra, $contrasegna)) {
