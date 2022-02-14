@@ -51,6 +51,7 @@ switch ($accion) {
         $loginController->cerrarSesion();
         break;
     case 'registro':
+<<<<<<< HEAD
         $loginController->muestraRegistro();
         break;
     case 'registroDestino':
@@ -60,11 +61,25 @@ switch ($accion) {
         $loginController->compruebaRegistro($email, $pass, $pass2);
         break;
     case 'administracion':
+=======
+>>>>>>> ee12866a551a29a53ac0dc06786ac8d86b629351
+        if (isset($_SESSION["user"])) {
+            $loginController->muestraRegistro();
+        } else {
+            $loginController->muestraLogin();
+        }
+        break;
+<<<<<<< HEAD
+    case 'home':
+        $frontController->muestraHome();
+=======
+    case 'administracion':
         if (isset($_SESSION["user"])) {
             $loginController->muestraAdministracion();
         } else {
             $loginController->muestraLogin();
         }
+>>>>>>> ee12866a551a29a53ac0dc06786ac8d86b629351
         break;
     case 'home':
         $frontController->muestraHome();

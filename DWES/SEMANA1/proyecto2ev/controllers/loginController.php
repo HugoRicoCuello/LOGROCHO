@@ -13,6 +13,7 @@ class loginController
         $this->bd = new BD();
     }
 
+<<<<<<< HEAD
     public function muestraRegistro()
     {
         $rutaVista = $this->ruta_global;
@@ -36,6 +37,10 @@ class loginController
             $error = "El usuario o contraseña introducidos no son correctos";
             header("Location: " . $this->ruta_global . "index.php/registro?error=$error");
         }
+=======
+    public function muestraRegistro(){
+        
+>>>>>>> ee12866a551a29a53ac0dc06786ac8d86b629351
     }
 
     public function compruebaLogin($usuario, $contrasegna)
