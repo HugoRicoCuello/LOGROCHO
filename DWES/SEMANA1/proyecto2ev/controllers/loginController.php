@@ -13,6 +13,31 @@ class loginController
         $this->bd = new BD();
     }
 
+    public function muestraRegistro()
+    {
+        $rutaVista = $this->ruta_global;
+        $bd = $this->bd;
+        require("view/registro.php");
+    }
+
+    public function compruebaRegistro($usuario, $contrasegna1, $contrasegna2)
+    {
+        if (preg_match($this->exp_correo, $usuario) && preg_match($this->exp_contra, $contrasegna1) && $contrasegna1 == $contrasegna2) {
+            $registro_correcto = $this->bd->altaUsuario($usuario, $contrasegna1);
+            var_dump($registro_correcto);
+            if ($registro_correcto) {
+                $_SESSION["user"] = $usuario;
+                header("Location: " . $this->ruta_global . "index.php/administracion");
+            } else {
+                $error = "El usuario o contraseña introducidos no son correctos";
+                header("Location: " . $this->ruta_global . "index.php/registro?error=$error");
+            }
+        } else {
+            $error = "El usuario o contraseña introducidos no son correctos";
+            header("Location: " . $this->ruta_global . "index.php/registro?error=$error");
+        }
+    }
+
     public function compruebaLogin($usuario, $contrasegna)
     {
         if (preg_match($this->exp_correo, $usuario) && preg_match($this->exp_contra, $contrasegna)) {

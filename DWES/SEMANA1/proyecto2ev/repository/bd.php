@@ -1,11 +1,12 @@
 <?php
+
 /** 
  * @author Hugo
-*/
+ */
 class BD
 {
 
-    
+
     private $db;
     public function __construct()
     {
@@ -154,6 +155,8 @@ class BD
             echo $e->getMessage();
         }
     }
+
+
 
     /**
      * obtieneResegnas
@@ -430,7 +433,7 @@ class BD
         }
     }
 
-        
+
     /**
      * obtieneImagenesBares
      *
@@ -706,13 +709,12 @@ class BD
         try {
             $contrasegna = sha1($password);
             $sql = "INSERT INTO usuarios (email,password,admin) values ('$email','$contrasegna','false')";
-            $this->db->query($sql);
-            echo "<br>";
+            $respuesta = $this->db->query($sql);
+            return $respuesta;
         } catch (PDOException $e) {
             echo $e->getMessage();
         }
     }
-
 
     /**
      * bajaUsuario
