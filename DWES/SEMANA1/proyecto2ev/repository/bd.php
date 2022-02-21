@@ -156,6 +156,17 @@ class BD
         }
     }
 
+    function obtieneImagenBar($id_Bar)
+    {
+        try {
+            $sql = "SELECT imagen from imagenes_bares where bar=$id_Bar LIMIT 1";
+            $resultado = $this->db->query($sql)->fetchAll();
+            return $resultado[0][0];
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
 
 
     /**

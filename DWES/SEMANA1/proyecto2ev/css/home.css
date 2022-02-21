@@ -6,6 +6,10 @@ body .navbar {
     padding: 0;
 }
 
+.btn-outline-success {
+    background-color: #fff;
+}
+
 #titulo {
     font-family: 'Kaushan Script', cursive;
     display: flex;
@@ -290,10 +294,6 @@ footer {
 #registro:hover{
     cursor: pointer;
 }
-
-
-
-
 
 @-webkit-keyframes fade {
     from {

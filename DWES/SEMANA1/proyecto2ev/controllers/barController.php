@@ -77,4 +77,11 @@ class barController
         $bar = $this->bd->obtieneBar($id);
         echo json_encode($bar);
     }
+
+    function listadoBares()
+    {
+        $bares = $this->bd->obtieneTodosBares();
+        $bd = $this->bd;
+        require("view/listadoBares.php");
+    }
 }

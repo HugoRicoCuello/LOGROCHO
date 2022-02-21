@@ -289,6 +289,9 @@ switch ($accion) {
             $loginController->muestraLogin();
         }
         break;
+    case 'listadoBares':
+        $barController->listadoBares();
+        break;
     default:
         header("Location: " . $home . "home");
         break;
