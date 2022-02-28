@@ -75,4 +75,11 @@ class pinchoController
         $pincho = $this->bd->obtienePincho($id);
         echo json_encode($pincho);
     }
+
+    function listadoPinchos()
+    {
+        $pinchos = $this->bd->obtieneTodosPinchos();
+        $bd = $this->bd;
+        require("view/listadoPinchos.php");
+    }
 }

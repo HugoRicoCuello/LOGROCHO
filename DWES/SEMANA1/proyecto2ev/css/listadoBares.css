@@ -8,12 +8,56 @@ footer {
     margin-top: auto;
 }
 
-.row{
+.row {
     row-gap: 20px;
 }
 
 .wrapper {
     margin: 10vh;
+    margin-top: 2%;
+}
+
+#filtros {
+    width: 67.5%;
+    background-color: #005361;
+    height: 50px;
+    margin-top: 2%;
+    margin-left: 32vh;
+    border-radius: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#buscador {
+    height: 50%;
+    border-radius: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+#filtro {
+    height: 50%;
+    border-radius: 10px;
+    margin-left: 27%;
+    margin-right: 2%;
+    text-align: center;
+    font-size: 12px;
+}
+
+#buscar {
+    font-size: 12px;
+    width: 100px;
+    height: 25px;
+    border-radius: 10px;
+    margin-left: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#buscar:hover{
+    cursor: pointer;
 }
 
 .card {

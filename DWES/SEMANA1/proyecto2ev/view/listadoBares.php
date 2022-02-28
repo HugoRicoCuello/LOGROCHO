@@ -12,7 +12,15 @@
 
 <body>
     <?php require("view/cabecera.php") ?>
-    <section class="wrapper">
+    <div id="filtros">
+        <input type="text" name="buscador" id="buscador" placeholder="Buscar...">
+        <a class="btn btn-light" id="buscar">Buscar</a>
+        <select name="filtro" id="filtro">
+            <option value="1">Buscar por Nombre</option>
+            <option value="2">Buscar por puntuacion</option>
+        </select>
+    </div>
+    <section class="wrapper" id="bares">
         <div class="container">
             <div class="row">
                 <?php

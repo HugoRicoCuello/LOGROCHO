@@ -7,7 +7,7 @@
                 <a onclick="setActive(this)" class="nav-link" id="listadoBares" data-toggle="pill" href="http://localhost/DWES/SEMANA1/proyecto2ev/index.php/listadoBares" role="tab" aria-controls="pills-company" aria-selected="true">BARES</a>
             </li>
             <li class="nav-item" role="presentation">
-                <a onclick="setActive(this)" class="nav-link" id="pills-product-tab" data-toggle="pill" href="#" role="tab" aria-controls="pills-product" aria-selected="false">PINCHOS</a>
+                <a onclick="setActive(this)" class="nav-link" id="listadoPinchos" data-toggle="pill" href="http://localhost/DWES/SEMANA1/proyecto2ev/index.php/listadoPinchos" role="tab" aria-controls="pills-product" aria-selected="false">PINCHOS</a>
             </li>
             <li class="nav-item" role="presentation">
                 <a onclick="setActive(this)" class="nav-link" id="pills-news-tab" data-toggle="pill" href="#" role="tab" aria-controls="pills-news" aria-selected="false">MEJORES VALORADOS</a>
@@ -30,12 +30,18 @@
         }
 
         window.onload = function() {
-            switch (window.location.href.split("/")[window.location.href.split("/").length -1]) {
+            switch (window.location.href.split("/")[window.location.href.split("/").length - 1]) {
                 case 'listadoBares':
-                    let enlace = document.getElementById("listadoBares");
+                    var enlace = document.getElementById("listadoBares");
+                    fetch("http://localhost/DWES/SEMANA1/proyecto2ev/index.php/obtieneBares/1/100/bares").then(
+                            response => response.json())
+                        .then(data => console.log());
                     setActive(enlace);
                     break;
-
+                case 'listadoPinchos':
+                    var enlace = document.getElementById("listadoPinchos");
+                    setActive(enlace);
+                    break;
                 default:
                     break;
             }

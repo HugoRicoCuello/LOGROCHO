@@ -69,13 +69,6 @@ switch ($accion) {
     case 'home':
         $frontController->muestraHome();
         break;
-    case 'bares':
-        if (isset($_SESSION["user"])) {
-            $frontController->muestraBares();
-        } else {
-            $loginController->muestraLogin();
-        }
-        break;
     case 'pinchos':
         if (isset($_SESSION["user"])) {
             $frontController->muestraPinchos();
@@ -127,13 +120,9 @@ switch ($accion) {
         }
         break;
     case 'obtieneBares':
-        if (isset($_SESSION["user"])) {
-            $limite = $array_ruta[1];
-            $numero = $array_ruta[2];
-            $barController->obtieneBares($limite, $numero);
-        } else {
-            $loginController->muestraLogin();
-        }
+        $limite = $array_ruta[1];
+        $numero = $array_ruta[2];
+        $barController->obtieneBares($limite, $numero);
         break;
     case 'altaPincho':
         if (isset($_SESSION["user"])) {
@@ -291,6 +280,11 @@ switch ($accion) {
         break;
     case 'listadoBares':
         $barController->listadoBares();
+        break;
+    case 'listadoPinchos':
+        $pinchoController->listadoPinchos();
+        break;
+    case 'baresAjax':
         break;
     default:
         header("Location: " . $home . "home");

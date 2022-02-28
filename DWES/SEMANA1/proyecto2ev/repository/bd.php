@@ -167,6 +167,17 @@ class BD
         }
     }
 
+    function obtieneImagenPincho($id_Pincho)
+    {
+        try {
+            $sql = "SELECT imagen from imagenes_pinchos where pincho=$id_Pincho LIMIT 1";
+            $resultado = $this->db->query($sql)->fetchAll();
+            return $resultado[0][0];
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
 
 
     /**
