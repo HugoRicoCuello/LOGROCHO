@@ -42,20 +42,37 @@ switch ($accion) {
             $loginController->muestraLogin();
         }
         break;
+    case 'login2':
+        if (isset($_GET["error"])) {
+            $loginController->muestraLogin2($_GET["error"]);
+        } else {
+            $loginController->muestraLogin2();
+        }
+        break;
     case 'loginDestino':
         $email = $_POST["email"];
         $pass = $_POST["pass"];
         $loginController->compruebaLogin($email, $pass);
         break;
+    case 'loginDestino2':
+        $email = $_POST["email"];
+        $pass = $_POST["pass"];
+        $loginController->compruebaLogin2($email, $pass);
+        break;
     case 'cerrarSesion':
         $loginController->cerrarSesion();
         break;
+    case 'cerrarSesion2':
+        $loginController->cerrarSesion2();
+        break;
     case 'registro':
-        if (isset($_SESSION["user"])) {
-            $loginController->muestraRegistro();
-        } else {
-            $loginController->muestraLogin();
-        }
+        $loginController->muestraRegistro();
+        break;
+    case 'registroDestino':
+        $email = $_POST["email"];
+        $pass = $_POST["pass"];
+        $pass2 =  $_POST["pass2"];
+        $loginController->compruebaRegistro($email, $pass, $pass2);
         break;
     case 'administracion':
         if (isset($_SESSION["user"])) {
@@ -66,13 +83,6 @@ switch ($accion) {
         break;
     case 'home':
         $frontController->muestraHome();
-        break;
-    case 'bares':
-        if (isset($_SESSION["user"])) {
-            $frontController->muestraBares();
-        } else {
-            $loginController->muestraLogin();
-        }
         break;
     case 'pinchos':
         if (isset($_SESSION["user"])) {
@@ -125,13 +135,9 @@ switch ($accion) {
         }
         break;
     case 'obtieneBares':
-        if (isset($_SESSION["user"])) {
-            $limite = $array_ruta[1];
-            $numero = $array_ruta[2];
-            $barController->obtieneBares($limite, $numero);
-        } else {
-            $loginController->muestraLogin();
-        }
+        $limite = $array_ruta[1];
+        $numero = $array_ruta[2];
+        $barController->obtieneBares($limite, $numero);
         break;
     case 'altaPincho':
         if (isset($_SESSION["user"])) {
@@ -286,6 +292,33 @@ switch ($accion) {
         } else {
             $loginController->muestraLogin();
         }
+        break;
+    case 'listadoBares':
+        $barController->listadoBares();
+        break;
+    case 'listadoPinchos':
+        $pinchoController->listadoPinchos();
+        break;
+    case 'tarjetaBar':
+        $id = $array_ruta[1];
+        $barController->tarjetaBar($id);
+        break;
+    case 'tarjetaPincho':
+        $id = $array_ruta[1];
+        $pinchoController->tarjetaPincho($id);
+        break;
+    case 'pinchosFav':
+        $idPincho = $array_ruta[1];
+        $usuario = $array_ruta[2];
+        $fav = $array_ruta[3];
+        $pinchoController->setPinchoFavorito($idPincho, $usuario, $fav);
+        break;
+    case 'eliminarUsuario':
+        $loginController->borrarUsuario();
+        break;
+    case 'likesResegnas':
+        $idResegna = $array_ruta[1];
+        $pinchoController->likesResegnas($idResegna);
         break;
     default:
         header("Location: " . $home . "home");

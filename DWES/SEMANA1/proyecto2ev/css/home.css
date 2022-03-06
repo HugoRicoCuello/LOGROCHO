@@ -6,6 +6,10 @@ body .navbar {
     padding: 0;
 }
 
+.btn-outline-success {
+    background-color: #fff;
+}
+
 #titulo {
     font-family: 'Kaushan Script', cursive;
     display: flex;
@@ -180,7 +184,7 @@ i:after {
     right: 1rem;
 }
 
-/* I haven't found a way for IE and Edge to let me style inputs that way */
+/* I haven't found a way for IE and Edge to let me style inputs that way 
 input {
     appearance: none;
     -ms-appearance: none;
@@ -244,7 +248,7 @@ input:checked+input:before {
 
 input:checked+input~input:before {
     display: none;
-}
+}*/
 
 .navbar .container-fluid {
     justify-content: center;
@@ -290,10 +294,6 @@ footer {
 #registro:hover{
     cursor: pointer;
 }
-
-
-
-
 
 @-webkit-keyframes fade {
     from {

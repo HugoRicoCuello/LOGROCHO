@@ -16,7 +16,7 @@ class frontController
         require("view/home.php");
     }
 
-    public function muestraBares(){
+    public function buscaBares(){
 
     }
 

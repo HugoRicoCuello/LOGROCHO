@@ -5,6 +5,10 @@ let transicion = 5000;
 window.onload = function () {
     verSlider();
     intervalo = setInterval(() => {
+        if (pausado){
+            clearInterval(intervalo);
+            return;
+        } 
         pasarPalante();
     }, transicion);
 }
