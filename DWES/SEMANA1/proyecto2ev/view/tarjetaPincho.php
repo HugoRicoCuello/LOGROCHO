@@ -112,14 +112,12 @@
             icon.classList.remove("fa-heart-o");
             icon.classList.add("fa-heart");
             icon.style.color = "red";
-            console.log("entro1");
             fetch(ruta);
             like = false;
         } else {
             icon.classList.remove("fa-heart");
             icon.classList.add("fa-heart-o");
             icon.style.color = "black";
-            console.log("entro2");
             fetch(ruta);
             like = true;
         }
