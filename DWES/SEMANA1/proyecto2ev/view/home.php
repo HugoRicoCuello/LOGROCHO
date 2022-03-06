@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
+<script>
+    console.error = function() {}
+</script>
 
 <head>
     <meta charset="UTF-8">

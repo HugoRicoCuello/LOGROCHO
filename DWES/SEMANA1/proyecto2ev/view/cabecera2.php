@@ -42,4 +42,6 @@
                 break;
         }
     }
+
+    console.error = function() {}
 </script>

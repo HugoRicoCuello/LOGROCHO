@@ -11,6 +11,7 @@ require_once("controllers/resegnaController.php");
 require_once("controllers/frontController.php");
 require_once("repository/bd.php");
 
+
 //ruta relativa
 $ruta_actual = "http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
 $ruta_rel = explode("index.php", $ruta_actual)[0];
