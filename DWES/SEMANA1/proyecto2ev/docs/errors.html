@@ -1,0 +1,2120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+    <meta charset="utf-8"/>
+    <title>     &raquo; Compilation errors
+</title>
+    <meta name="author" content=""/>
+    <meta name="description" content=""/>
+
+            <link href="css/template.css" rel="stylesheet" media="all"/>
+    
+            <!--[if lt IE 9]>
+        <script src="https://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>
+        <![endif]-->
+        <script src="js/jquery-1.7.1.min.js" type="text/javascript"></script>
+        <script src="js/jquery-ui-1.8.2.custom.min.js" type="text/javascript"></script>
+        <script src="js/jquery.mousewheel.min.js" type="text/javascript"></script>
+        <script src="js/bootstrap.js" type="text/javascript"></script>
+        <script src="js/template.js" type="text/javascript"></script>
+        <script src="js/prettify/prettify.min.js" type="text/javascript"></script>
+    
+            <link rel="shortcut icon" href="img/favicon.ico"/>
+        <link rel="apple-touch-icon" href="img/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="img/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="img/apple-touch-icon-114x114.png"/>
+    </head>
+<body>
+
+        <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span> <span class="icon-bar"></span>
+                    <span class="icon-bar"></span> </a>
+                <a class="brand" href="index.html">API Documentation</a>
+
+                <div class="nav-collapse">
+                    <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#api" class="dropdown-toggle" data-toggle="dropdown">
+                                API Documentation <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                                                                            </ul>
+                        </li>
+                        <li class="dropdown" id="charts-menu">
+                            <a href="#charts" class="dropdown-toggle" data-toggle="dropdown">
+                                Charts <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="graph_class.html">
+                                        <i class="icon-list-alt"></i>&#160;Class hierarchy diagram
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown" id="reports-menu">
+                            <a href="#reports" class="dropdown-toggle" data-toggle="dropdown">
+                                Reports <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="errors.html">
+                                        <i class="icon-list-alt"></i>&#160;Errors
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="markers.html">
+                                        <i class="icon-list-alt"></i>&#160;Markers
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="deprecated.html">
+                                        <i class="icon-list-alt"></i>&#160;Deprecated
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="go_to_top">
+            <a href="#___" style="color: inherit">Back to top&#160;&#160;<i class="icon-upload icon-white"></i></a>
+        </div>
+    </div>
+    
+    <div id="___" class="container">
+        <noscript>
+            <div class="alert alert-warning">
+                Javascript is disabled; several features are only available if Javascript is enabled.
+            </div>
+        </noscript>
+
+        
+        <div class="row">
+        <div class="span4">
+
+            <ul class="side-nav nav nav-list">
+                <li class="nav-header">Filter type</li>
+                <li>
+                    <div class="btn-group type-filter" data-toggle="buttons-checkbox">
+                        <button class="btn critical">Critical</button>
+                        <button class="btn error">Error</button>
+                        <button class="btn notice">Notice</button>
+                    </div>
+                </li>
+                <li class="nav-header">Navigation</li>
+                                                                            <li><a href="#controllers\backController.php"><i class="icon-file"></i> controllers\backController.php</a></li>
+                                                                                                    <li><a href="#controllers\barController.php"><i class="icon-file"></i> controllers\barController.php</a></li>
+                                                                                                    <li><a href="#controllers\conexion.php"><i class="icon-file"></i> controllers\conexion.php</a></li>
+                                                                                                    <li><a href="#controllers\frontController.php"><i class="icon-file"></i> controllers\frontController.php</a></li>
+                                                                                                    <li><a href="#controllers\loginController.php"><i class="icon-file"></i> controllers\loginController.php</a></li>
+                                                                                                    <li><a href="#controllers\pinchoController.php"><i class="icon-file"></i> controllers\pinchoController.php</a></li>
+                                                                                                    <li><a href="#controllers\resegnaController.php"><i class="icon-file"></i> controllers\resegnaController.php</a></li>
+                                                                                                    <li><a href="#controllers\userController.php"><i class="icon-file"></i> controllers\userController.php</a></li>
+                                                                                                    <li><a href="#index.php"><i class="icon-file"></i> index.php</a></li>
+                                                                                                    <li><a href="#models\bar.php"><i class="icon-file"></i> models\bar.php</a></li>
+                                                                                                    <li><a href="#models\pincho.php"><i class="icon-file"></i> models\pincho.php</a></li>
+                                                                                                    <li><a href="#models\resegna.php"><i class="icon-file"></i> models\resegna.php</a></li>
+                                                                                                    <li><a href="#models\usuario.php"><i class="icon-file"></i> models\usuario.php</a></li>
+                                                                                                    <li><a href="#repository\bd.php"><i class="icon-file"></i> repository\bd.php</a></li>
+                                                                                                    <li><a href="#view\administracion.php"><i class="icon-file"></i> view\administracion.php</a></li>
+                                                                                                    <li><a href="#view\cabecera.php"><i class="icon-file"></i> view\cabecera.php</a></li>
+                                                                                                    <li><a href="#view\fichaBar.php"><i class="icon-file"></i> view\fichaBar.php</a></li>
+                                                                                                    <li><a href="#view\fichaPincho.php"><i class="icon-file"></i> view\fichaPincho.php</a></li>
+                                                                                                    <li><a href="#view\fichaResegna.php"><i class="icon-file"></i> view\fichaResegna.php</a></li>
+                                                                                                    <li><a href="#view\fichaUsuario.php"><i class="icon-file"></i> view\fichaUsuario.php</a></li>
+                                                                                                    <li><a href="#view\footer.php"><i class="icon-file"></i> view\footer.php</a></li>
+                                                                                                    <li><a href="#view\home.php"><i class="icon-file"></i> view\home.php</a></li>
+                                                                                                    <li><a href="#view\listaBares.php"><i class="icon-file"></i> view\listaBares.php</a></li>
+                                                                                                    <li><a href="#view\listadoBares.php"><i class="icon-file"></i> view\listadoBares.php</a></li>
+                                                                                                    <li><a href="#view\listadoPinchos.php"><i class="icon-file"></i> view\listadoPinchos.php</a></li>
+                                                                                                    <li><a href="#view\listaPinchos.php"><i class="icon-file"></i> view\listaPinchos.php</a></li>
+                                                                                                    <li><a href="#view\listaResegnas.php"><i class="icon-file"></i> view\listaResegnas.php</a></li>
+                                                                                                    <li><a href="#view\listaReseñas.php"><i class="icon-file"></i> view\listaReseñas.php</a></li>
+                                                                                                    <li><a href="#view\listaUsuarios.php"><i class="icon-file"></i> view\listaUsuarios.php</a></li>
+                                                                                                    <li><a href="#view\login.php"><i class="icon-file"></i> view\login.php</a></li>
+                                                                                                    <li><a href="#view\pruebas.php"><i class="icon-file"></i> view\pruebas.php</a></li>
+                                                                                                    <li><a href="#view\registro.php"><i class="icon-file"></i> view\registro.php</a></li>
+                                                                                                    <li><a href="#view\tarjetaBar.php"><i class="icon-file"></i> view\tarjetaBar.php</a></li>
+                                                                                                    <li><a href="#view\tarjetaPincho.php"><i class="icon-file"></i> view\tarjetaPincho.php</a></li>
+                                                                    </ul>
+        </div>
+
+        <div class="span8">
+            <ul class="breadcrumb">
+                <li><a href="?"><i class="icon-remove-sign"></i></a><span class="divider">\</span></li>
+                <li>Compilation Errors</li>
+            </ul>
+
+            
+                            <div class="package-contents">
+                                            <a name="controllers\backController.php" id="controllers\backController.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            controllers\backController.php
+                            <span class="pull-right badge badge-info">10</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>3</td>
+                                        <td>No summary for class \backController</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>Argument $ruta is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>No summary for method muestraUsuarios()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>19</td>
+                                        <td>No summary for method muestraBares()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>24</td>
+                                        <td>No summary for method muestraPinchos()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>29</td>
+                                        <td>No summary for method muestraResegnas()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>5</td>
+                                        <td>No summary for property $bd</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>6</td>
+                                        <td>No summary for property $ruta_global</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="controllers\barController.php" id="controllers\barController.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            controllers\barController.php
+                            <span class="pull-right badge badge-info">33</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>3</td>
+                                        <td>No summary for class \barController</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>Argument $ruta is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>Argument $nombre is missing from the Docblock of altaBar</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>Argument $latitud is missing from the Docblock of altaBar</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>Argument $longitud is missing from the Docblock of altaBar</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>Argument $imagenes is missing from the Docblock of altaBar</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>No summary for method altaBar()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>35</td>
+                                        <td>Argument $nombre is missing from the Docblock of verFichaBar</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>35</td>
+                                        <td>Argument $puntuacion is missing from the Docblock of verFichaBar</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>35</td>
+                                        <td>Argument $lat is missing from the Docblock of verFichaBar</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>35</td>
+                                        <td>Argument $lon is missing from the Docblock of verFichaBar</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>35</td>
+                                        <td>Argument $id is missing from the Docblock of verFichaBar</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>35</td>
+                                        <td>No summary for method verFichaBar()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>47</td>
+                                        <td>Argument $id is missing from the Docblock of bajaBar</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>47</td>
+                                        <td>No summary for method bajaBar()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>53</td>
+                                        <td>Argument $id is missing from the Docblock of modificaBar</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>53</td>
+                                        <td>Argument $nombre is missing from the Docblock of modificaBar</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>53</td>
+                                        <td>Argument $puntuacion is missing from the Docblock of modificaBar</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>53</td>
+                                        <td>Argument $latitud is missing from the Docblock of modificaBar</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>53</td>
+                                        <td>Argument $longitud is missing from the Docblock of modificaBar</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>53</td>
+                                        <td>No summary for method modificaBar()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>59</td>
+                                        <td>No summary for method listaBares()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>64</td>
+                                        <td>No summary for method listaBar()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>69</td>
+                                        <td>Argument $limite is missing from the Docblock of obtieneBares</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>69</td>
+                                        <td>Argument $numero is missing from the Docblock of obtieneBares</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>69</td>
+                                        <td>No summary for method obtieneBares()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>75</td>
+                                        <td>Argument $id is missing from the Docblock of obtieneBar</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>75</td>
+                                        <td>No summary for method obtieneBar()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>81</td>
+                                        <td>No summary for method listadoBares()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>5</td>
+                                        <td>No summary for property $bd</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>6</td>
+                                        <td>No summary for property $ruta_global</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="controllers\conexion.php" id="controllers\conexion.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            controllers\conexion.php
+                            <span class="pull-right badge badge-info">3</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>2</td>
+                                        <td>No summary for class \Conexion</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>No summary for method getConexion()</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="controllers\frontController.php" id="controllers\frontController.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            controllers\frontController.php
+                            <span class="pull-right badge badge-info">9</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>3</td>
+                                        <td>No summary for class \frontController</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>Argument $ruta is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>No summary for method muestraHome()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>19</td>
+                                        <td>No summary for method buscaBares()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>No summary for method muestraPinchos()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>5</td>
+                                        <td>No summary for property $bd</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>6</td>
+                                        <td>No summary for property $ruta_global</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="controllers\loginController.php" id="controllers\loginController.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            controllers\loginController.php
+                            <span class="pull-right badge badge-info">20</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>3</td>
+                                        <td>No summary for class \loginController</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>10</td>
+                                        <td>Argument $ruta is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>10</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>16</td>
+                                        <td>No summary for method muestraRegistro()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>Argument $usuario is missing from the Docblock of compruebaRegistro</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>Argument $contrasegna1 is missing from the Docblock of compruebaRegistro</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>Argument $contrasegna2 is missing from the Docblock of compruebaRegistro</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>23</td>
+                                        <td>No summary for method compruebaRegistro()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>41</td>
+                                        <td>Argument $usuario is missing from the Docblock of compruebaLogin</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>41</td>
+                                        <td>Argument $contrasegna is missing from the Docblock of compruebaLogin</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>41</td>
+                                        <td>No summary for method compruebaLogin()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>58</td>
+                                        <td>No summary for method cerrarSesion()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>64</td>
+                                        <td>Argument $errorLog is missing from the Docblock of muestraLogin</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>64</td>
+                                        <td>No summary for method muestraLogin()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>72</td>
+                                        <td>No summary for method muestraAdministracion()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>5</td>
+                                        <td>No summary for property $bd</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>6</td>
+                                        <td>No summary for property $ruta_global</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>7</td>
+                                        <td>No summary for property $exp_correo</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>No summary for property $exp_contra</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="controllers\pinchoController.php" id="controllers\pinchoController.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            controllers\pinchoController.php
+                            <span class="pull-right badge badge-info">28</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>3</td>
+                                        <td>No summary for class \pinchoController</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>Argument $ruta is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>Argument $nombre is missing from the Docblock of verFichaPincho</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>Argument $id_bar is missing from the Docblock of verFichaPincho</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>Argument $id_pincho is missing from the Docblock of verFichaPincho</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>No summary for method verFichaPincho()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>24</td>
+                                        <td>Argument $nombre is missing from the Docblock of altaPincho</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>24</td>
+                                        <td>Argument $bar is missing from the Docblock of altaPincho</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>24</td>
+                                        <td>Argument $imagenes is missing from the Docblock of altaPincho</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>24</td>
+                                        <td>No summary for method altaPincho()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>45</td>
+                                        <td>Argument $id is missing from the Docblock of bajaPincho</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>45</td>
+                                        <td>No summary for method bajaPincho()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>51</td>
+                                        <td>Argument $id is missing from the Docblock of modificaPincho</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>51</td>
+                                        <td>Argument $nombre is missing from the Docblock of modificaPincho</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>51</td>
+                                        <td>Argument $bar is missing from the Docblock of modificaPincho</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>51</td>
+                                        <td>No summary for method modificaPincho()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>57</td>
+                                        <td>No summary for method listaPinchos()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>62</td>
+                                        <td>No summary for method listaPincho()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>67</td>
+                                        <td>Argument $limite is missing from the Docblock of obtienePinchos</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>67</td>
+                                        <td>Argument $numero is missing from the Docblock of obtienePinchos</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>67</td>
+                                        <td>No summary for method obtienePinchos()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>73</td>
+                                        <td>Argument $id is missing from the Docblock of obtienePincho</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>73</td>
+                                        <td>No summary for method obtienePincho()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>79</td>
+                                        <td>No summary for method listadoPinchos()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>5</td>
+                                        <td>No summary for property $bd</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>6</td>
+                                        <td>No summary for property $ruta_global</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="controllers\resegnaController.php" id="controllers\resegnaController.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            controllers\resegnaController.php
+                            <span class="pull-right badge badge-info">32</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>3</td>
+                                        <td>No summary for class \resegnaController</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>Argument $ruta is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>Argument $puntuacion is missing from the Docblock of altaResegna</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>Argument $descripcion is missing from the Docblock of altaResegna</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>Argument $usuario is missing from the Docblock of altaResegna</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>Argument $pincho is missing from the Docblock of altaResegna</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>15</td>
+                                        <td>No summary for method altaResegna()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>21</td>
+                                        <td>Argument $id is missing from the Docblock of bajaResegna</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>21</td>
+                                        <td>No summary for method bajaResegna()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>27</td>
+                                        <td>Argument $puntuacion is missing from the Docblock of verFichaResegna</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>27</td>
+                                        <td>Argument $descripcion is missing from the Docblock of verFichaResegna</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>27</td>
+                                        <td>Argument $id_usuario is missing from the Docblock of verFichaResegna</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>27</td>
+                                        <td>Argument $id_pincho is missing from the Docblock of verFichaResegna</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>27</td>
+                                        <td>Argument $id is missing from the Docblock of verFichaResegna</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>27</td>
+                                        <td>No summary for method verFichaResegna()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>39</td>
+                                        <td>Argument $id is missing from the Docblock of modificaResegna</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>39</td>
+                                        <td>Argument $puntuacion is missing from the Docblock of modificaResegna</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>39</td>
+                                        <td>Argument $descripcion is missing from the Docblock of modificaResegna</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>39</td>
+                                        <td>Argument $usuario is missing from the Docblock of modificaResegna</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>39</td>
+                                        <td>Argument $pincho is missing from the Docblock of modificaResegna</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>39</td>
+                                        <td>No summary for method modificaResegna()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>46</td>
+                                        <td>No summary for method listaResegnas()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>51</td>
+                                        <td>No summary for method listaResegna()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>56</td>
+                                        <td>Argument $limite is missing from the Docblock of obtieneResegnas</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>56</td>
+                                        <td>Argument $numero is missing from the Docblock of obtieneResegnas</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>56</td>
+                                        <td>No summary for method obtieneResegnas()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>62</td>
+                                        <td>Argument $id is missing from the Docblock of obtieneResegna</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>62</td>
+                                        <td>No summary for method obtieneResegna()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>5</td>
+                                        <td>No summary for property $bd</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>6</td>
+                                        <td>No summary for property $ruta_global</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="controllers\userController.php" id="controllers\userController.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            controllers\userController.php
+                            <span class="pull-right badge badge-info">28</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>3</td>
+                                        <td>No summary for class \userController</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>Argument $ruta is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>Argument $email is missing from the Docblock of altaUsuario</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>Argument $password is missing from the Docblock of altaUsuario</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>14</td>
+                                        <td>No summary for method altaUsuario()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>20</td>
+                                        <td>Argument $id is missing from the Docblock of bajaUsuario</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>20</td>
+                                        <td>No summary for method bajaUsuario()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>26</td>
+                                        <td>Argument $id is missing from the Docblock of modificaUsuario</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>26</td>
+                                        <td>Argument $email is missing from the Docblock of modificaUsuario</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>26</td>
+                                        <td>Argument $password is missing from the Docblock of modificaUsuario</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>26</td>
+                                        <td>Argument $admin is missing from the Docblock of modificaUsuario</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>26</td>
+                                        <td>No summary for method modificaUsuario()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>32</td>
+                                        <td>Argument $pwd is missing from the Docblock of verFichaUsuario</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>32</td>
+                                        <td>Argument $admin is missing from the Docblock of verFichaUsuario</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>32</td>
+                                        <td>Argument $email is missing from the Docblock of verFichaUsuario</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>32</td>
+                                        <td>Argument $id is missing from the Docblock of verFichaUsuario</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>32</td>
+                                        <td>No summary for method verFichaUsuario()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>42</td>
+                                        <td>No summary for method listaUsuarios()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>47</td>
+                                        <td>No summary for method listaUsuario()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>52</td>
+                                        <td>Argument $limite is missing from the Docblock of obtieneUsuarios</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>52</td>
+                                        <td>Argument $numero is missing from the Docblock of obtieneUsuarios</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>52</td>
+                                        <td>No summary for method obtieneUsuarios()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>58</td>
+                                        <td>Argument $id is missing from the Docblock of obtieneUsuario</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>58</td>
+                                        <td>No summary for method obtieneUsuario()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>5</td>
+                                        <td>No summary for property $bd</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>6</td>
+                                        <td>No summary for property $ruta_global</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="index.php" id="index.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            index.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="models\bar.php" id="models\bar.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            models\bar.php
+                            <span class="pull-right badge badge-info">12</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>3</td>
+                                        <td>No summary for class \Bar</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>9</td>
+                                        <td>Argument $nombre is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>9</td>
+                                        <td>Argument $puntuacion is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>9</td>
+                                        <td>Argument $localizacion is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>9</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>31</td>
+                                        <td>Argument $localizacion is missing from the Docblock of setLocalizacion</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>51</td>
+                                        <td>Argument $puntuacion is missing from the Docblock of setPuntuacion</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>71</td>
+                                        <td>Argument $nombre is missing from the Docblock of setNombre</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>5</td>
+                                        <td>No summary for property $nombre</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>6</td>
+                                        <td>No summary for property $puntuacion</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>7</td>
+                                        <td>No summary for property $localizacion</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="models\pincho.php" id="models\pincho.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            models\pincho.php
+                            <span class="pull-right badge badge-info">9</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>3</td>
+                                        <td>No summary for class \Pincho</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>Argument $nombre is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>Argument $bar is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>27</td>
+                                        <td>Argument $bar is missing from the Docblock of setBar</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>47</td>
+                                        <td>Argument $nombre is missing from the Docblock of setNombre</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>5</td>
+                                        <td>No summary for property $nombre</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>6</td>
+                                        <td>No summary for property $bar</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="models\resegna.php" id="models\resegna.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            models\resegna.php
+                            <span class="pull-right badge badge-info">17</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>3</td>
+                                        <td>No summary for class \Reseña</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>11</td>
+                                        <td>Argument $puntuacion is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>11</td>
+                                        <td>Argument $descripcion is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>11</td>
+                                        <td>Argument $usuario is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>11</td>
+                                        <td>Argument $pincho is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>11</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>32</td>
+                                        <td>Argument $id is missing from the Docblock of setId</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>52</td>
+                                        <td>Argument $puntuacion is missing from the Docblock of setPuntuacion</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>72</td>
+                                        <td>Argument $descripcion is missing from the Docblock of setDescripcion</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>92</td>
+                                        <td>Argument $usuario is missing from the Docblock of setUsuario</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>112</td>
+                                        <td>Argument $pincho is missing from the Docblock of setPincho</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>5</td>
+                                        <td>No summary for property $id</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>6</td>
+                                        <td>No summary for property $puntuacion</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>7</td>
+                                        <td>No summary for property $descripcion</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>No summary for property $usuario</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>9</td>
+                                        <td>No summary for property $pincho</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="models\usuario.php" id="models\usuario.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            models\usuario.php
+                            <span class="pull-right badge badge-info">14</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>3</td>
+                                        <td>No summary for class \Usuario</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>10</td>
+                                        <td>Argument $email is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>10</td>
+                                        <td>Argument $password is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>10</td>
+                                        <td>Argument $admin is missing from the Docblock of __construct</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>10</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>30</td>
+                                        <td>Argument $id is missing from the Docblock of setId</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>50</td>
+                                        <td>Argument $email is missing from the Docblock of setEmail</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>70</td>
+                                        <td>Argument $password is missing from the Docblock of setPassword</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>90</td>
+                                        <td>Argument $admin is missing from the Docblock of setAdmin</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>5</td>
+                                        <td>No summary for property $id</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>6</td>
+                                        <td>No summary for property $email</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>7</td>
+                                        <td>No summary for property $password</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>8</td>
+                                        <td>No summary for property $admin</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="repository\bd.php" id="repository\bd.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            repository\bd.php
+                            <span class="pull-right badge badge-info">12</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>6</td>
+                                        <td>No summary for class \BD</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>11</td>
+                                        <td>No summary for method __construct()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>58</td>
+                                        <td>Name of argument $latitud does not match with the DocBlock&#039;s name $puntuacion in altaBar()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>58</td>
+                                        <td>Name of argument $longitud does not match with the DocBlock&#039;s name $latitud in altaBar()</td>
+                                    </tr>
+                                                                    <tr class="notice">
+                                        <td>notice</td>
+                                        <td>58</td>
+                                        <td>Parameter $puntuacion could not be found in altaBar()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>159</td>
+                                        <td>Argument $id_Bar is missing from the Docblock of obtieneImagenBar</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>159</td>
+                                        <td>No summary for method obtieneImagenBar()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>170</td>
+                                        <td>Argument $id_Pincho is missing from the Docblock of obtieneImagenPincho</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>170</td>
+                                        <td>No summary for method obtieneImagenPincho()</td>
+                                    </tr>
+                                                                    <tr class="notice">
+                                        <td>notice</td>
+                                        <td>729</td>
+                                        <td>Parameter $admin could not be found in altaUsuario()</td>
+                                    </tr>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>10</td>
+                                        <td>No summary for property $db</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\administracion.php" id="view\administracion.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\administracion.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\cabecera.php" id="view\cabecera.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\cabecera.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\fichaBar.php" id="view\fichaBar.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\fichaBar.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\fichaPincho.php" id="view\fichaPincho.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\fichaPincho.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\fichaResegna.php" id="view\fichaResegna.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\fichaResegna.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\fichaUsuario.php" id="view\fichaUsuario.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\fichaUsuario.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\footer.php" id="view\footer.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\footer.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\home.php" id="view\home.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\home.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\listaBares.php" id="view\listaBares.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\listaBares.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\listadoBares.php" id="view\listadoBares.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\listadoBares.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\listadoPinchos.php" id="view\listadoPinchos.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\listadoPinchos.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\listaPinchos.php" id="view\listaPinchos.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\listaPinchos.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\listaResegnas.php" id="view\listaResegnas.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\listaResegnas.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\listaReseñas.php" id="view\listaReseñas.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\listaReseñas.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\listaUsuarios.php" id="view\listaUsuarios.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\listaUsuarios.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\login.php" id="view\login.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\login.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\pruebas.php" id="view\pruebas.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\pruebas.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\registro.php" id="view\registro.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\registro.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\tarjetaBar.php" id="view\tarjetaBar.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\tarjetaBar.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                            <div class="package-contents">
+                                            <a name="view\tarjetaPincho.php" id="view\tarjetaPincho.php"></a>
+                        <h3>
+                            <i class="icon-file"></i>
+                            view\tarjetaPincho.php
+                            <span class="pull-right badge badge-info">1</span>
+                        </h3>
+                        <div>
+                            <table class="table markers table-bordered">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Line</th>
+                                    <th>Description</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                                                    <tr class="error">
+                                        <td>error</td>
+                                        <td>0</td>
+                                        <td>No summary was found for this file</td>
+                                    </tr>
+                                                            </tbody>
+                            </table>
+                        </div>
+                                    </div>
+                    </div>
+    </div>
+    </div>
+
+        <footer class="span12">
+            Template is built using <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap 2</a> and icons provided by
+            <a href="http://glyphicons.com/">Glyphicons</a>.<br/>
+            Documentation is powered by <a href="http://www.phpdoc.org/">phpDocumentor </a> and<br/>
+            generated on Mon, 07 Mar 2022 17:40:30 +0100.<br/>
+    </footer>
+    </body>
+</html>
