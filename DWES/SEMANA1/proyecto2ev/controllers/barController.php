@@ -80,8 +80,21 @@ class barController
 
     function listadoBares()
     {
+        $rutaVista = $this->ruta_global . "index.php/tarjetaBar";
         $bares = $this->bd->obtieneTodosBares();
         $bd = $this->bd;
         require("view/listadoBares.php");
+    }
+
+    function tarjetaBar($id)
+    {
+        $idBar = $id;
+        $bar = $this->bd->obtieneBar($id);
+        $imagenes = $this->bd->obtieneImagenesBares($id);
+        $pinchos = $this->bd->obtieneTodosPinchosBar($id);
+        $bd = $this->bd;
+        $rutaPincho = $this->ruta_global . "index.php/tarjetaPincho";
+        $rutaBares = $this->ruta_global . "index.php/obtieneBares";
+        require("view/tarjetaBar.php");
     }
 }

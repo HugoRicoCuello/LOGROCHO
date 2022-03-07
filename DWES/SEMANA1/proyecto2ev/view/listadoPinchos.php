@@ -27,17 +27,19 @@
                 <?php
                 foreach ($pinchos as $pincho) {
                 ?>
-                    <div class="col-md-4">
-                        <div class="card text-white card-has-bg click-col" style="background-image:url(../<?php echo $bd->obtieneImagenPincho($pincho[0]) ?>)">
-                            <img class="card-img d-none">
-                            <div class="card-img-overlay d-flex flex-column">
-                                <div class="card-body">
-                                    <small class="card-meta mb-2">Nombre del Pincho</small>
-                                    <h4 class="card-title mt-0 "><?php echo $pincho[1] ?></h4>
+                    <a class="col-md-4" href="<?php echo $rutaVista . '/' . $pincho[0] ?>">
+                        <div>
+                            <div class="card text-white card-has-bg click-col" style="background-image:url(../<?php echo $bd->obtieneImagenPincho($pincho[0]) ?>)">
+                                <img class="card-img d-none">
+                                <div class="card-img-overlay d-flex flex-column">
+                                    <div class="card-body">
+                                        <small class="card-meta mb-2">Nombre del Pincho</small>
+                                        <h4 class="card-title mt-0 "><?php echo $pincho[1] ?></h4>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </a>
                 <?php
                 }
                 ?>

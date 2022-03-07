@@ -12,7 +12,8 @@ class pinchoController
     }
 
 
-    function verFichaPincho($nombre, $id_bar, $id_pincho){
+    function verFichaPincho($nombre, $id_bar, $id_pincho)
+    {
         $nombre;
         $id_bar;
         $id_pincho;
@@ -78,8 +79,46 @@ class pinchoController
 
     function listadoPinchos()
     {
+        $rutaVista = $this->ruta_global . "index.php/tarjetaPincho";
         $pinchos = $this->bd->obtieneTodosPinchos();
         $bd = $this->bd;
         require("view/listadoPinchos.php");
+    }
+
+    function tarjetaPincho($id)
+    {
+        $idPincho = $id;
+        $pincho = $this->bd->obtienePincho($id);
+        $imagenes = $this->bd->obtieneImagenesPincho($id);
+        $resegnas = $this->bd->obtieneTodasResegnasPincho($id);
+        $rutaVista = $this->ruta_global . "index.php/pinchosFav";
+        $rutaLikes = $this->ruta_global . "index.php/likesResegnas";
+        if (isset($_SESSION["user"])) {
+            $usuario = $_SESSION["user"];
+        } else {
+            $usuario = "admin@gmail.com";
+        }
+
+        $bd = $this->bd;
+        require("view/tarjetaPincho.php");
+    }
+
+    function setPinchoFavorito($idPincho, $usuario, $fav)
+    {
+        if (!$fav) {
+            $this->bd->unSetPinchoFav($idPincho, $usuario);
+        } else {
+            $this->bd->setPinchoFav($idPincho, $usuario);
+        }
+    }
+
+    function likesResegnas($idResegna)
+    {
+        $isResegna = $this->bd->obtieneResegnasLikes($idResegna);
+        if (!$isResegna) {
+            $this->bd->actualizaLikesResgena($idResegna);
+        } else {
+            $this->bd->creaLikesResgena($idResegna);
+        }
     }
 }

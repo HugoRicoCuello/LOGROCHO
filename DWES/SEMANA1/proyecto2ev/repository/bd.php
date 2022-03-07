@@ -382,6 +382,54 @@ class BD
     }
 
     /**
+     * obtieneTodosPinchosBar
+     *
+     * @param  mixed $idBar
+     * @return void
+     */
+    function obtieneTodosPinchosBar($idBar)
+    {
+        try {
+            $sql = "SELECT * FROM pinchos where bar=" . $idBar;
+            $resultado = $this->db->query($sql);
+            $pinchos = array();
+            foreach ($resultado as $pincho) {
+                array_push($pinchos, $pincho);
+            }
+            return $pinchos;
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    /**
+     * obtieneTodasResegnasPincho
+     *
+     * @param  mixed $idPincho
+     * @return void
+     */
+    function obtieneTodasResegnasPincho($idPincho)
+    {
+        try {
+            $sql = "SELECT * FROM reseñas where pincho=" . $idPincho;
+            $resultado = $this->db->query($sql);
+            if ($resultado) {
+                $resegnas = array();
+                foreach ($resultado as $resgena) {
+                    $resegnas[] = $resgena;
+                }
+                return $resegnas;
+            } else {
+                return [];
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+
+
+    /**
      * obtieneTodosBares
      *
      * @return void
@@ -523,7 +571,7 @@ class BD
             $sql = "SELECT nombre FROM bares where id=" . $id;
             $resultado = $this->db->query($sql);
             foreach ($resultado as $nombre) {
-                return $nombre;
+                return $nombre[0];
             }
         } catch (PDOException $e) {
             echo $e->getMessage();
@@ -672,6 +720,117 @@ class BD
 
 
 
+    /**
+     * obtieneNombreUsuario
+     *
+     * @param  mixed $id
+     * @return void
+     */
+    function obtieneNombreUsuario($id)
+    {
+        try {
+            $sql = "SELECT email FROM usuarios WHERE id=" . $id;
+            $resultado = $this->db->query($sql);
+            $usuarios = array();
+            foreach ($resultado as $usuario) {
+                array_push($usuarios, $usuario);
+            }
+            return $usuarios[0][0];
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    function obtienePinchosFav($usuario)
+    {
+        try {
+            $sql = "SELECT * FROM favoritos WHERE usuario=" . $usuario;
+            $resultado = $this->db->query($sql);
+            $pinchos = array();
+            foreach ($resultado as $pincho) {
+                array_push($pinchos, $pincho);
+            }
+            return $pinchos[0];
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    function  setPinchoFav($idPincho, $usuario)
+    {
+        try {
+            $sql = "INSERT INTO favoritos (pincho,usuario) VALUES ($idPincho, '$usuario')";
+            $resultado = $this->db->query($sql);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    function  unSetPinchoFav($idPincho, $usuario)
+    {
+        try {
+            $sql = "DELETE FROM favoritos WHERE pincho=" . $idPincho . " AND usuario= '" . $usuario . "'";
+            $resultado = $this->db->query($sql);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    function borraUsuario($id)
+    {
+        try {
+            $sql = "DELETE FROM usuarios WHERE id=" . $id[0];
+            $resultado = $this->db->query($sql);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    function obtieneResegnasLikes($idResegna)
+    {
+        try {
+            $sql = "SELECT * FROM likes WHERE resegna=$idResegna";
+            $resultado = $this->db->query($sql);
+            $datos = array();
+            foreach ($resultado as $dato) {
+                array_push($datos, $dato);
+            }
+            if (empty($datos)) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    function actualizaLikesResgena($idResegna)
+    {
+        try {
+            $sql = "SELECT likes from likes where resegna=$idResegna";
+            $likes = $this->db->query($sql);
+            $like = array();
+            foreach ($likes as $dato) {
+                array_push($like, $dato);
+            }
+            $aux = ++$like[0][0];
+            $sql2 = "UPDATE likes set likes=$aux where resegna=$idResegna";
+            $resultado = $this->db->query($sql2);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
+
+    function creaLikesResgena($idResegna)
+    {
+        try {
+            $sql = "INSERT INTO likes (resegna,likes) VALUES ($idResegna,1)";
+            $resultado = $this->db->query($sql);
+        } catch (PDOException $e) {
+            echo $e->getMessage();
+        }
+    }
 
 
     /**

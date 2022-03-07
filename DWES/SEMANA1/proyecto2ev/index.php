@@ -11,6 +11,7 @@ require_once("controllers/resegnaController.php");
 require_once("controllers/frontController.php");
 require_once("repository/bd.php");
 
+
 //ruta relativa
 $ruta_actual = "http://" . $_SERVER["HTTP_HOST"] . $_SERVER["REQUEST_URI"];
 $ruta_rel = explode("index.php", $ruta_actual)[0];
@@ -42,13 +43,28 @@ switch ($accion) {
             $loginController->muestraLogin();
         }
         break;
+    case 'login2':
+        if (isset($_GET["error"])) {
+            $loginController->muestraLogin2($_GET["error"]);
+        } else {
+            $loginController->muestraLogin2();
+        }
+        break;
     case 'loginDestino':
         $email = $_POST["email"];
         $pass = $_POST["pass"];
         $loginController->compruebaLogin($email, $pass);
         break;
+    case 'loginDestino2':
+        $email = $_POST["email"];
+        $pass = $_POST["pass"];
+        $loginController->compruebaLogin2($email, $pass);
+        break;
     case 'cerrarSesion':
         $loginController->cerrarSesion();
+        break;
+    case 'cerrarSesion2':
+        $loginController->cerrarSesion2();
         break;
     case 'registro':
         $loginController->muestraRegistro();
@@ -284,7 +300,26 @@ switch ($accion) {
     case 'listadoPinchos':
         $pinchoController->listadoPinchos();
         break;
-    case 'baresAjax':
+    case 'tarjetaBar':
+        $id = $array_ruta[1];
+        $barController->tarjetaBar($id);
+        break;
+    case 'tarjetaPincho':
+        $id = $array_ruta[1];
+        $pinchoController->tarjetaPincho($id);
+        break;
+    case 'pinchosFav':
+        $idPincho = $array_ruta[1];
+        $usuario = $array_ruta[2];
+        $fav = $array_ruta[3];
+        $pinchoController->setPinchoFavorito($idPincho, $usuario, $fav);
+        break;
+    case 'eliminarUsuario':
+        $loginController->borrarUsuario();
+        break;
+    case 'likesResegnas':
+        $idResegna = $array_ruta[1];
+        $pinchoController->likesResegnas($idResegna);
         break;
     default:
         header("Location: " . $home . "home");
